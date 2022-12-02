@@ -1,0 +1,174 @@
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 22000 MP (4 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 22000.1.amd64fre.co_release.210604-1628
+Machine Name:
+Debug session time: Fri Nov  4 17:21:17.000 2022 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 9:30:21.000
+................................................................
+................................................................
+...................
+Loading unloaded module list
+........................................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(e14.2488): Access violation - code c0000005 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ffb`9e9846d4 c3              ret
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : AV.Dereference
+    Value: NullClassPtr
+
+    Key  : AV.Fault
+    Value: Read
+
+    Key  : Analysis.CPU.mSec
+    Value: 5983
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 6049
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 0
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 280
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 2627
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 175
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 34221
+
+    Key  : WER.OS.Branch
+    Value: co_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2021-06-04T16:28:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22000.1
+
+    Key  : WER.Process.Version
+    Value: 29.1.0.112
+
+
+FILE_IN_CAB:  UltraEdit._11-04-22_18-24-19_.dmp
+
+COMMENT:  29.1.0.112
+
+NTGLOBALFLAG:  0
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000000000000000 rbx=0000000000000000 rcx=0000000000000000
+rdx=00000000000005fa rsi=0000000000000000 rdi=0000000000000000
+rip=000000014158dd23 rsp=00000000007ff910 rbp=00000000007ffa40
+ r8=00000000000f0001  r9=00000001403ebde0 r10=9aadbe931ed2da70
+r11=00000000007ff888 r12=0000000000000000 r13=000000000bf59970
+r14=0000000000000000 r15=0000000000000009
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010202
+uedit64!boost::serialization::singleton_module::is_locked+0x14ede73:
+00000001`4158dd23 488b89c8000000  mov     rcx,qword ptr [rcx+0C8h] ds:00000000`000000c8=????????????????
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 000000014158dd23 (uedit64!boost::serialization::singleton_module::is_locked+0x00000000014ede73)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000000
+   Parameter[1]: 00000000000000c8
+Attempt to read from address 00000000000000c8
+
+PROCESS_NAME:  uedit64.exe
+
+READ_ADDRESS:  00000000000000c8 
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  0000000000000000
+
+EXCEPTION_PARAMETER2:  00000000000000c8
+
+STACK_TEXT:  
+00000000`007ff910 00000001`4069ec44     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : uedit64!boost::serialization::singleton_module::is_locked+0x14ede73
+00000000`007ff940 00000001`403ebe05     : 00000000`000f0001 00000000`002907ce 00000000`00000000 00000001`41638642 : uedit64!boost::serialization::singleton_module::is_locked+0x5fed94
+00000000`007ffbc0 00007ffb`9e0add2c     : 00000000`00211000 00000001`41584608 00000000`002907ce 00000000`00000113 : uedit64!boost::serialization::singleton_module::is_locked+0x34bf55
+00000000`007ffbf0 00007ffb`9e0ad113     : 00000001`426bd338 00000001`41638717 00000000`00000000 00000000`00000000 : user32!DispatchHookW+0xbc
+00000000`007ffc80 00007ffb`9e0acffe     : 00000000`009afe50 00000001`426bd310 00000000`007ffd98 00000001`41638642 : user32!CallHookWithSEH+0x33
+00000000`007ffcd0 00007ffb`9e987ad4     : 00000001`4063a340 00000001`41637be0 00000000`00000048 00000001`00000001 : user32!_fnHkINDWORD+0x1e
+00000000`007ffd20 00007ffb`9c291414     : 00007ffb`9e0b470e 00000000`009b0f50 00000001`426bd310 00000001`426bbbec : ntdll!KiUserCallbackDispatcherContinue
+00000000`007ffda8 00007ffb`9e0b470e     : 00000000`009b0f50 00000001`426bd310 00000001`426bbbec 00000001`41638642 : win32u!NtUserGetMessage+0x14
+00000000`007ffdb0 00000001`404cbd61     : 00000000`009b0fa8 00000000`00000000 00000000`009b0fa8 00000001`00000003 : user32!GetMessageW+0x2e
+00000000`007ffe10 00000001`403f314e     : 00000000`009b0fa8 00000000`00000000 00000000`009b0fa8 00000001`426dc7d0 : uedit64!boost::serialization::singleton_module::is_locked+0x42beb1
+00000000`007ffe40 00000001`403f288d     : 00000001`426dc7d0 00000000`00000001 00000001`426dc7d0 00000000`009b0fa8 : uedit64!boost::serialization::singleton_module::is_locked+0x35329e
+00000000`007ffe70 00000001`419c29c3     : 00000000`00000001 00000001`40000000 00000000`00000000 00000000`009a73a4 : uedit64!boost::serialization::singleton_module::is_locked+0x3529dd
+00000000`007ffeb0 00000001`417e37d2     : 00000000`00000001 00000000`00000000 00000000`00000000 00000000`00000000 : uedit64!web::json::value::operator[]+0x882b3
+00000000`007ffef0 00007ffb`9dfe54e0     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : uedit64!boost::serialization::singleton_module::is_locked+0x1743922
+00000000`007fff30 00007ffb`9e8e485b     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x10
+00000000`007fff60 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x2b
+
+
+STACK_COMMAND:  ~0s; .ecxr ; kb
+
+SYMBOL_NAME:  uedit64+14ede73
+
+MODULE_NAME: uedit64
+
+IMAGE_NAME:  uedit64.exe
+
+FAILURE_BUCKET_ID:  NULL_CLASS_PTR_READ_c0000005_uedit64.exe!Unknown
+
+OS_VERSION:  10.0.22000.1
+
+BUILDLAB_STR:  co_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  29.1.0.112
+
+FAILURE_ID_HASH:  {6fa2d8b0-c64b-e689-390d-c4b0235dfcd9}
+
+Followup:     MachineOwner
+---------
