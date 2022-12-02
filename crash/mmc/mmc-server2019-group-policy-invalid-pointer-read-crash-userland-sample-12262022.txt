@@ -1,0 +1,163 @@
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 17763 MP (16 procs) Free x64
+Product: LanManNt, suite: TerminalServer SingleUserTS
+Edition build lab: 17763.1.amd64fre.rs5_release.180914-1434
+Machine Name:
+Debug session time: Mon Dec 26 07:43:01.000 2022 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 0:02:07.000
+................................................................
+..............................................
+Loading unloaded module list
+......................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(3b68.bec): Access violation - code c0000005 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ff8`bec21344 c3              ret
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : AV.Fault
+    Value: Read
+
+    Key  : Analysis.CPU.mSec
+    Value: 30718
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 66274
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 2014
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 17300
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 254
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 127
+
+    Key  : WER.OS.Branch
+    Value: rs5_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2018-09-14T14:34:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.17763.1
+
+    Key  : WER.Process.Version
+    Value: 10.0.17763.1697
+
+
+FILE_IN_CAB:  mmc.exe.15208.dmp
+
+NTGLOBALFLAG:  0
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=00007ff864c12d18 rbx=0000000000000000 rcx=0000000000625e40
+rdx=0000000000000000 rsi=00000000029cfd78 rdi=0000000000000000
+rip=00007ff870b1a2a3 rsp=00000000000fefe0 rbp=00000000029cfd40
+ r8=0000000000000000  r9=0000000000000000 r10=00000fff0e163452
+r11=0000401111044440 r12=00000000029cfd40 r13=0000000000000000
+r14=0000000000000000 r15=00000000029cfd98
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010202
+GPOAdminCustom!`dynamic atexit destructor for 'CGPOLinkSection::s_spLastSearchGPODomain''+0x13:
+00007ff8`70b1a2a3 488b4010        mov     rax,qword ptr [rax+10h] ds:00007ff8`64c12d28=????????????????
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ff870b1a2a3 (GPOAdminCustom!`dynamic atexit destructor for 'CGPOLinkSection::s_spLastSearchGPODomain''+0x0000000000000013)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000000
+   Parameter[1]: 00007ff864c12d28
+Attempt to read from address 00007ff864c12d28
+
+PROCESS_NAME:  mmc.exe
+
+READ_ADDRESS:  00007ff864c12d28 
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  0000000000000000
+
+EXCEPTION_PARAMETER2:  00007ff864c12d28
+
+STACK_TEXT:  
+00000000`000fefe0 00007ff8`70b1a2a3 GPOAdminCustom!`dynamic atexit destructor for 'CGPOLinkSection::s_spLastSearchGPODomain''+0x13
+00000000`000ff010 00007ff8`70b1303f GPOAdminCustom!CRT_INIT+0xc3
+00000000`000ff050 00007ff8`70b133cc GPOAdminCustom!__DllMainCRTStartup+0x1c8
+00000000`000ff1c0 00007ff8`beba5d37 ntdll!LdrpCallInitRoutine+0x6f
+00000000`000ff230 00007ff8`bebd58ed ntdll!LdrpProcessDetachNode+0xf5
+00000000`000ff300 00007ff8`bebd535f ntdll!LdrpUnloadNode+0x3f
+00000000`000ff350 00007ff8`bebc2199 ntdll!LdrpDecrementModuleLoadCountEx+0x71
+00000000`000ff380 00007ff8`bebc2113 ntdll!LdrUnloadDll+0x93
+00000000`000ff3b0 00007ff8`bb4c00fe KERNELBASE!FreeLibrary+0x1e
+00000000`000ff3e0 00007ff8`bc5fcc18 combase!CClassCache::CDllPathEntry::CFinishObject::Finish+0x28
+00000000`000ff410 00007ff8`bc5ec14f combase!CClassCache::CFinishComposite::Finish+0x4b
+00000000`000ff440 00007ff8`bc5eb772 combase!CClassCache::CleanUpDllsForProcess+0x152
+00000000`000ff900 00007ff8`bc5eaeeb combase!ProcessUninitialize+0x19f
+00000000`000ff950 00007ff8`bc649e1c combase!DecrementProcessInitializeCount+0x4c
+00000000`000ff980 00007ff8`bc649cb7 combase!wCoUninitialize+0xeb
+00000000`000ff9d0 00007ff8`bc64aef5 combase!CoUninitialize+0xe5
+00000000`000ffac0 00007ff8`bc3eaa6e ole32!OleUninitialize+0x3e
+00000000`000ffaf0 00007ff7`cbb6ae32 mmc!CAMCApp::DeinitializeOLE+0x92
+00000000`000ffb60 00007ff7`cbb6a99b mmc!CAMCApp::ExitInstance+0x1db
+00000000`000ffbf0 00007ff8`8aa0305e mfc42u!AfxWinMain+0x9e
+00000000`000ffc30 00007ff7`cbbadf59 mmc!__wmainCRTStartup+0x1c9
+00000000`000ffcf0 00007ff8`be207af4 kernel32!BaseThreadInitThunk+0x14
+00000000`000ffd20 00007ff8`bebda371 ntdll!RtlUserThreadStart+0x21
+
+
+SYMBOL_NAME:  GPOAdminCustom!`dynamic atexit destructor for 'CGPOLinkSection::s_spLastSearchGPODomain''+13
+
+MODULE_NAME: GPOAdminCustom
+
+IMAGE_NAME:  GPOAdminCustom.dll
+
+STACK_COMMAND:  .ecxr ; kb ; ** Pseudo Context ** Pseudo ** Value: a ** ; kb
+
+FAILURE_BUCKET_ID:  INVALID_POINTER_READ_c0000005_GPOAdminCustom.dll!_dynamic_atexit_destructor_for__CGPOLinkSection::s_spLastSearchGPODomain__
+
+OS_VERSION:  10.0.17763.1
+
+BUILDLAB_STR:  rs5_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  10.0.17763.3232
+
+FAILURE_ID_HASH:  {ddc54502-c72e-1485-d54a-6de8ad4feada}
+
+Followup:     MachineOwner
+---------
+

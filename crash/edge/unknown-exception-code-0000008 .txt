@@ -1,0 +1,361 @@
+
+Microsoft (R) Windows Debugger Version 10.0.25200.1003 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 22621 MP (32 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 22621.1.amd64fre.ni_release.220506-1250
+Machine Name:
+Debug session time: Thu Feb 16 06:42:16.000 2023 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 0:18:11.000
+...................................
+Loading unloaded module list
+....
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(35e4.4d24): Unknown exception - code e0000008 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtDelayExecution+0x14:
+00007ff9`bd5ef484 c3              ret
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 13781
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 119865
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 148
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 1
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 454
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 139
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 4551
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 979
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 1091
+
+    Key  : WER.OS.Branch
+    Value: ni_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2022-05-06T12:50:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22621.1
+
+    Key  : WER.Process.Version
+    Value: 110.0.1587.41
+
+
+FILE_IN_CAB:  9df06b9e-39ed-4c2f-b79d-2886a46ca021.dmp
+
+NTGLOBALFLAG:  400
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=000000458c9f2af0 rbx=000000458c9f2390 rcx=00007ff95ad58c04
+rdx=0000000000000000 rsi=0000000000000000 rdi=00007ff95adaaea0
+rip=00007ff9baf3051c rsp=000000458c9f21f0 rbp=0000000000000001
+ r8=000000458c9f2af0  r9=000000458c9f2518 r10=00007ff955ea7846
+r11=0000000000000000 r12=000000458c9f2af0 r13=0000000000000000
+r14=000000458c9f2390 r15=000000458c9f26d0
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000202
+KERNELBASE!RaiseException+0x6c:
+00007ff9`baf3051c 0f1f440000      nop     dword ptr [rax+rax]
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ff9baf3051c (KERNELBASE!RaiseException+0x000000000000006c)
+   ExceptionCode: e0000008
+  ExceptionFlags: 00000081
+NumberParameters: 1
+   Parameter[0]: 0000000000000000
+
+PROCESS_NAME:  msedge.exe
+
+ERROR_CODE: (NTSTATUS) 0xe0000008 - <Unable to get error code text>
+
+EXCEPTION_CODE_STR:  e0000008
+
+EXCEPTION_PARAMETER1:  0000000000000000
+
+STACK_TEXT:  
+00000045`8c9f21f0 00007ff9`55b529c2     : 000079e5`21983423 00000045`8c9f2380 00000000`00000001 00007ff9`5ba33cc1 : KERNELBASE!RaiseException+0x6c
+00000045`8c9f22d0 00007ff9`55b529d9     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa 00000045`8c9f26d0 00000045`8c9f2390 : msedge!partition_alloc::internal::OnNoMemoryInternal+0x22
+00000045`8c9f2300 00007ff9`55b529f5     : 00007ff9`5ab68ec0 00000045`8c9f2af0 00000000`00000000 00000045`8c9f2390 : msedge!partition_alloc::TerminateBecauseOutOfMemory+0x9
+00000045`8c9f2330 00007ff9`57b30134     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!partition_alloc::internal::OnNoMemory+0x15
+00000045`8c9f2360 00007ff9`5370c393     : 00007ff9`5ab68ec0 00000045`8c9f2518 000079e5`21983263 00007ff9`5ab68ec0 : msedge!blink::ReportV8OOMError+0x1a4
+00000045`8c9f24e0 00007ff9`5370c323     : aaaaaaaa`aaaaaaaa 00000045`8c9f26d0 00000045`8c9f0fc8 00000045`8c9f0ff0 : msedge!v8::Utils::ReportOOMFailure+0x23
+00000045`8c9f2510 00007ff9`4ea86dbe     : 00000000`00c0001c 00007ff9`5006e453 00006e78`00302328 00000000`00000000 : msedge!v8::internal::V8::FatalProcessOutOfMemory+0x2a3
+00000045`8c9fb1e0 00007ff9`4ea29bac     : 00000001`00000000 00006e78`003022e8 00000001`08ec0101 00006e78`00302328 : msedge!v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath+0x298e
+00000045`8c9fb2d0 00007ff9`4ea7974d     : 00000217`000040c0 00000001`00000001 00000045`8c9fb3f8 00007ff9`504c23cc : msedge!v8::internal::Factory::AllocateRaw+0x89c
+00000045`8c9fb3e0 00007ff9`4ea7766c     : 00006e78`00302320 00007ff9`513441ca 00000217`f00923cd 00000000`00000004 : msedge!v8::internal::FactoryBase<v8::internal::Factory>::NewFixedArrayWithMap+0x5d
+00000045`8c9fb450 00007ff9`4ea70460     : 00000004`8c9fb5d8 00000045`8c9fb5c8 00000045`8c9fb7b0 00006e78`003dc000 : msedge!v8::internal::BaseNameDictionary<v8::internal::NameDictionary,v8::internal::NameDictionaryShape>::Add+0x30c
+00000045`8c9fb570 00007ff9`4edda13d     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa 00000000`00000000 00000000`00000000 : msedge!v8::internal::LookupIterator::ApplyTransitionToDataProperty+0x290
+00000045`8c9fb630 00007ff9`4edd9293     : 00000000`00000005 80000000`80000000 80000000`80000000 ffffffff`ffffffff : msedge!v8::internal::Object::SetProperty+0x8bd
+00000045`8c9fbf60 00007ff9`4ff2977c     : 00000217`096a4629 00000217`f0092f31 00000217`f0092cb1 00000000`00000421 : msedge!v8::internal::Runtime_SetKeyedProperty+0x223
+00000045`8c9fc060 00007ff9`4ffdbdb4     : 00000217`fc1942a5 00000217`ff89c821 00000217`0c284959 00000045`8c9fc1c0 : msedge!Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit+0x3c
+00000045`8c9fc0b8 00007ff9`4fe9572c     : 00000217`000024b9 00000217`000023e1 00000217`0d2bdb71 00000217`0734c961 : msedge!Builtins_SetKeyedPropertyHandler+0x74
+00000045`8c9fc100 00007ff9`4fe9572c     : 00000217`000023e1 00000217`0734c961 00000217`033be021 00000217`0d29f491 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc1d0 00007ff9`4fe9572c     : 00000217`0d29f491 00000217`0d2bdb71 00000217`000023e1 00000217`000023e1 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc290 00007ff9`4fe9572c     : 00000217`0734c961 00000217`fc193ba9 00000217`0734c961 00000217`00efc0dd : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc358 00007ff9`4fe9572c     : 00000217`0c2b4ab1 00000217`fc193ba9 00000217`000023e1 00000217`fc193ba9 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc3b0 00007ff9`4fe9572c     : 00000217`0c288d21 00000217`fc193b8d 00000217`000023e1 00000217`0c288d21 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc418 00007ff9`4fe9572c     : 00000217`0c382355 00000217`fc193b8d 00000217`04c823a1 00000217`00efc911 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc478 00007ff9`4fe9572c     : 00000217`04e75225 00000217`fc193b8d 00000217`fc193aed 00000217`fc193b8d : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc4d8 00007ff9`4fe9572c     : 00000217`04e74ec9 00000217`fc193b71 00000217`fc193aed 00000217`fc193b71 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc540 00007ff9`4fe9572c     : 00000217`000023e1 00000217`fc193aed 00000217`000023e1 00000217`000023e1 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc5a8 00007ff9`4fe9572c     : 00000217`000023e1 00000217`fc193aed 00000217`03233421 00000217`00fe265d : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc630 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`fc193aed 00000217`04cd8a6d 00000217`fc193aed : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc6d8 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`04ce8851 00000217`00c72c9d 00000000`00000072 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc780 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`04ce8861 00000217`00c72cbd 00000000`00000088 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc7d0 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`fc193add 00000217`04cd8a6d 00000217`04cd8a6d : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc820 00007ff9`4fe93b1c     : 00000217`03b5be31 00000217`fc193a99 00000217`032340d9 00000000`0000002e : msedge!Builtins_InterpreterEntryTrampoline+0xec
+00000045`8c9fc898 00007ff9`4fe9371b     : 00000000`00000000 00000000`00000000 00000000`00000002 00000000`00000000 : msedge!Builtins_JSEntryTrampoline+0x5c
+00000045`8c9fc8c8 00007ff9`4ed13e98     : 00000217`00000040 00000217`f00469c9 00006e78`00304000 00000000`00000031 : msedge!Builtins_JSEntry+0xdb
+00000045`8c9fc9e0 00007ff9`4ef76fa2     : 00006e78`003020f0 00000016`00000001 00006e78`003020f0 00000217`00002401 : msedge!v8::internal::Execution::Call+0x258
+00000045`8c9fcba0 00007ff9`4ef75d60     : 00000000`00000006 000079e5`2198da23 aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!v8::Function::Call+0x302
+00000045`8c9fccd0 00007ff9`50333fb1     : 00000045`8c9fcf50 aaaaaaaa`aaaaaaaa ffffffff`00000000 00000045`8c9fcec0 : msedge!blink::V8ScriptRunner::CallFunction+0x250
+00000045`8c9fce50 00007ff9`50333e7d     : aa000ab4`6daaaaaa 00000ff3`00aaaaaa 000079e5`2198d823 00000ff3`003d1b70 : msedge!blink::bindings::CallbackInvokeHelper<blink::CallbackFunctionBase,2,0>::CallInternal+0x71
+00000045`8c9fced0 00007ff9`4f40e3e1     : 00000045`8c9fd070 00007ff9`4f40e320 00006e78`00328388 00000fff`29d28434 : msedge!blink::bindings::CallbackInvokeHelper<blink::CallbackFunctionBase,2,0>::Call+0xd
+00000045`8c9fcf00 00007ff9`4f40c88b     : 00000217`03233421 000079e5`2198d863 00006e78`00302048 aaaaaaaa`aaaaaaaa : msedge!blink::V8EventHandlerNonNull::InvokeWithoutRunnabilityCheck+0x191
+00000045`8c9fd030 00007ff9`4ef708df     : 00007ff9`4fe9572c 00000217`04ce8861 00000217`00c72cbd 00000000`00000092 : msedge!blink::JSEventHandler::InvokeInternal+0x1eb
+00000045`8c9fd190 00007ff9`4ef663b5     : 00007ff9`5be89760 aaaaaaaa`aaaaaa00 00000ff3`0ea49648 00007ff9`5be89760 : msedge!blink::JSBasedEventListener::Invoke+0xf6f
+00000045`8c9fd320 00007ff9`4ef6a806     : 00000000`00055700 00000ff3`0ea272b4 00000ff3`0ea27250 00006e78`07d09450 : msedge!blink::EventTarget::FireEventListeners+0x415
+00000045`8c9fd4b0 00007ff9`4ef62694     : 00000000`01252f01 00000045`8c9fd660 00000ff3`0010d540 000079e5`2198c3b3 : msedge!blink::EventTarget::FireEventListeners+0x176
+00000045`8c9fd530 00007ff9`5163936d     : 00006e78`003ea5b8 00000045`8c9fd850 00000045`00000001 00000045`8c9fd8e0 : msedge!blink::EventTarget::DispatchEventInternal+0x34
+00000045`8c9fd570 00007ff9`4ea37eb6     : 00000000`00000000 00000000`00000000 00000000`00000000 aaaaaaaa`aaaaaaaa : msedge!blink::MessagePort::Accept+0x23d
+00000045`8c9fd730 00007ff9`5270a98d     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!base::internal::Invoker<base::internal::BindState<void (mojo::Connector::*)(unsigned int),base::internal::UnretainedWrapper<mojo::Connector,base::RawPtrBanDanglingIfSupported> >,void (unsigned int)>::Run+0x3216
+00000045`8c9fe200 00007ff9`4ea47d6c     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!base::RepeatingCallback<void __cdecl(edge::webshot::BitmapImageData const & __ptr64)>::Run+0x31
+00000045`8c9fe230 00007ff9`4e96451e     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!mojo::SimpleWatcher::OnHandleReady+0xbfc
+00000045`8c9fe430 00007ff9`4e961fe6     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!base::TaskAnnotator::RunTaskImpl+0x1ee
+00000045`8c9fe580 00007ff9`5254dc47     : 00006e78`008813c0 00007ff9`509f88a8 00000000`00000030 7fffffff`ffffffef : msedge!base::sequence_manager::internal::ThreadControllerWithMessagePumpImpl::DoWorkImpl+0x666
+00000045`8c9fe870 00007ff9`509f8020     : 00000045`8c9fec98 00000045`8c9feb30 00000045`8c9fec10 00007ff9`4f27b7e3 : msedge!base::MessagePumpDefault::Run+0x137
+00000045`8c9fe9f0 00007ff9`5084bdd3     : 00007ff9`5c4214f8 00006e78`00389ab0 59ddf5dc`4ba4356f 00000000`00000120 : msedge!base::sequence_manager::internal::ThreadControllerWithMessagePumpImpl::Run+0x100
+00000045`8c9fea80 00007ff9`506b6cd4     : 00007ff9`5c41e100 00007ff9`4f2f30dd 00006e78`00000000 00000000`00000008 : msedge!base::RunLoop::Run+0x143
+00000045`8c9febb0 00007ff9`506a6f18     : 00000045`8c9ff390 00007ff9`4f04019c 00000000`00000000 aaaaaaaa`aaaaaaaa : msedge!content::RendererMain+0x514
+00000045`8c9fee00 00007ff9`506a58bf     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : msedge!content::RunOtherNamedProcessTypeMain+0x19f
+00000045`8c9fef20 00007ff9`506a4dd1     : 00006e78`0024c320 00006e78`0023c3e0 7fffffff`ffffffff 00000045`8c9ff140 : msedge!content::ContentMainRunnerImpl::Run+0x29f
+00000045`8c9ff060 00007ff9`506a3445     : 00007ff6`32790000 000059b0`0028c140 00000045`8c9ff360 00000188`68a051c0 : msedge!content::ContentMain+0x21f
+00000045`8c9ff280 00007ff6`3284f5c8     : 00007ff6`32aa05a0 00007ff9`506a31a0 00000000`32aa0500 000059b0`0029c210 : msedge!ChromeMain+0x2a5
+00000045`8c9ff460 00007ff6`3284c623     : 00000000`0000000a 00000045`8c9ff7d0 00000045`8c177000 00000045`8c9ff880 : msedge_exe!MainDllLoader::Launch+0x392
+00000045`8c9ff6f0 00007ff6`3290aee2     : 00000000`00000000 00007ff6`3290af59 00000000`00000000 00007ff9`baf16690 : msedge_exe!wWinMain+0x468
+00000045`8c9ffbf0 00007ff9`bc5e26bd     : 00000000`00000000 00000045`8c9ffc40 00000000`00000030 00000000`00000000 : msedge_exe!__scrt_common_main_seh+0x106
+00000045`8c9ffc30 00007ff6`32a17595     : 00000000`00000000 00007ff6`3290af50 00000045`8c177000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+00000045`8c9ffc60 00007ff9`bd5adfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : msedge_exe!TargetBaseThreadInitThunk+0x40
+00000045`8c9ffcf0 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
+
+
+STACK_COMMAND:  ~0s; .ecxr ; kb
+
+SYMBOL_NAME:  msedge!partition_alloc::internal::OnNoMemoryInternal+22
+
+MODULE_NAME: msedge
+
+IMAGE_NAME:  msedge.dll
+
+FAILURE_BUCKET_ID:  APPLICATION_FAULT_e0000008_msedge.dll!partition_alloc::internal::OnNoMemoryInternal
+
+OS_VERSION:  10.0.22621.1
+
+BUILDLAB_STR:  ni_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  110.0.1587.41
+
+FAILURE_ID_HASH:  {989325a2-aa06-53a0-f8a5-6c0a0ff5863b}
+
+Followup:     MachineOwner
+---------
+
+0:000> k
+ # Child-SP          RetAddr               Call Site
+00 00000045`8c9f0918 00007ff9`bd5a5873     ntdll!NtDelayExecution+0x14
+01 00000045`8c9f0920 00007ff9`baeea0ed     ntdll!RtlDelayExecution+0x43
+02 00000045`8c9f0950 00007ff9`5d084dd1     KERNELBASE!SleepEx+0x7d
+03 00000045`8c9f09d0 00007ff9`5d014de5     msedge_elf!crashpad::`anonymous namespace'::UnhandledExceptionHandler+0xd1
+04 00000045`8c9f0b50 00007ff9`53b30cb5     msedge_elf!CrashForException_ExportThunk+0x15
+05 00000045`8c9f0b80 00007ff9`bd5f3eaf     msedge!CrashForExceptionInNonABICompliantCodeRange+0x35
+06 00000045`8c9f0bd0 00007ff9`bd56eae6     ntdll!RtlpExecuteHandlerForException+0xf
+07 00000045`8c9f0c00 00007ff9`bd5a4b35     ntdll!RtlDispatchException+0x286
+08 00000045`8c9f1350 00007ff9`baf3051c     ntdll!RtlRaiseException+0x195
+09 00000045`8c9f21f0 00007ff9`55b529c2     KERNELBASE!RaiseException+0x6c
+0a 00000045`8c9f22d0 00007ff9`55b529d9     msedge!partition_alloc::internal::OnNoMemoryInternal+0x22
+0b 00000045`8c9f2300 00007ff9`55b529f5     msedge!partition_alloc::TerminateBecauseOutOfMemory+0x9
+0c 00000045`8c9f2330 00007ff9`57b30134     msedge!partition_alloc::internal::OnNoMemory+0x15
+0d 00000045`8c9f2360 00007ff9`5370c393     msedge!blink::ReportV8OOMError+0x1a4
+0e 00000045`8c9f24e0 00007ff9`5370c323     msedge!v8::Utils::ReportOOMFailure+0x23
+0f 00000045`8c9f2510 00007ff9`4ea86dbe     msedge!v8::internal::V8::FatalProcessOutOfMemory+0x2a3
+10 00000045`8c9fb1e0 00007ff9`4ea29bac     msedge!v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath+0x298e
+11 00000045`8c9fb2d0 00007ff9`4ea7974d     msedge!v8::internal::Factory::AllocateRaw+0x89c
+12 00000045`8c9fb3e0 00007ff9`4ea7766c     msedge!v8::internal::FactoryBase<v8::internal::Factory>::NewFixedArrayWithMap+0x5d
+13 00000045`8c9fb450 00007ff9`4ea70460     msedge!v8::internal::BaseNameDictionary<v8::internal::NameDictionary,v8::internal::NameDictionaryShape>::Add+0x30c
+14 00000045`8c9fb570 00007ff9`4edda13d     msedge!v8::internal::LookupIterator::ApplyTransitionToDataProperty+0x290
+15 00000045`8c9fb630 00007ff9`4edd9293     msedge!v8::internal::Object::SetProperty+0x8bd
+16 00000045`8c9fbf60 00007ff9`4ff2977c     msedge!v8::internal::Runtime_SetKeyedProperty+0x223
+17 00000045`8c9fc060 00007ff9`4ffdbdb4     msedge!Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit+0x3c
+18 00000045`8c9fc0b8 00007ff9`4fe9572c     msedge!Builtins_SetKeyedPropertyHandler+0x74
+19 00000045`8c9fc100 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+1a 00000045`8c9fc1d0 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+1b 00000045`8c9fc290 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+1c 00000045`8c9fc358 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+1d 00000045`8c9fc3b0 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+1e 00000045`8c9fc418 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+1f 00000045`8c9fc478 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+20 00000045`8c9fc4d8 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+21 00000045`8c9fc540 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+22 00000045`8c9fc5a8 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+23 00000045`8c9fc630 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+24 00000045`8c9fc6d8 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+25 00000045`8c9fc780 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+26 00000045`8c9fc7d0 00007ff9`4fe9572c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+27 00000045`8c9fc820 00007ff9`4fe93b1c     msedge!Builtins_InterpreterEntryTrampoline+0xec
+28 00000045`8c9fc898 00007ff9`4fe9371b     msedge!Builtins_JSEntryTrampoline+0x5c
+29 00000045`8c9fc8c8 00007ff9`4ed13e98     msedge!Builtins_JSEntry+0xdb
+2a 00000045`8c9fc9e0 00007ff9`4ef76fa2     msedge!v8::internal::Execution::Call+0x258
+2b 00000045`8c9fcba0 00007ff9`4ef75d60     msedge!v8::Function::Call+0x302
+2c 00000045`8c9fccd0 00007ff9`50333fb1     msedge!blink::V8ScriptRunner::CallFunction+0x250
+2d 00000045`8c9fce50 00007ff9`50333e7d     msedge!blink::bindings::CallbackInvokeHelper<blink::CallbackFunctionBase,2,0>::CallInternal+0x71
+2e 00000045`8c9fced0 00007ff9`4f40e3e1     msedge!blink::bindings::CallbackInvokeHelper<blink::CallbackFunctionBase,2,0>::Call+0xd
+2f 00000045`8c9fcf00 00007ff9`4f40c88b     msedge!blink::V8EventHandlerNonNull::InvokeWithoutRunnabilityCheck+0x191
+30 00000045`8c9fd030 00007ff9`4ef708df     msedge!blink::JSEventHandler::InvokeInternal+0x1eb
+31 00000045`8c9fd190 00007ff9`4ef663b5     msedge!blink::JSBasedEventListener::Invoke+0xf6f
+32 00000045`8c9fd320 00007ff9`4ef6a806     msedge!blink::EventTarget::FireEventListeners+0x415
+33 00000045`8c9fd4b0 00007ff9`4ef62694     msedge!blink::EventTarget::FireEventListeners+0x176
+34 00000045`8c9fd530 00007ff9`5163936d     msedge!blink::EventTarget::DispatchEventInternal+0x34
+35 00000045`8c9fd570 00007ff9`4ea37eb6     msedge!blink::MessagePort::Accept+0x23d
+36 00000045`8c9fd730 00007ff9`5270a98d     msedge!base::internal::Invoker<base::internal::BindState<void (mojo::Connector::*)(unsigned int),base::internal::UnretainedWrapper<mojo::Connector,base::RawPtrBanDanglingIfSupported> >,void (unsigned int)>::Run+0x3216
+37 00000045`8c9fe200 00007ff9`4ea47d6c     msedge!base::RepeatingCallback<void __cdecl(edge::webshot::BitmapImageData const & __ptr64)>::Run+0x31
+38 00000045`8c9fe230 00007ff9`4e96451e     msedge!mojo::SimpleWatcher::OnHandleReady+0xbfc
+39 00000045`8c9fe430 00007ff9`4e961fe6     msedge!base::TaskAnnotator::RunTaskImpl+0x1ee
+3a 00000045`8c9fe580 00007ff9`5254dc47     msedge!base::sequence_manager::internal::ThreadControllerWithMessagePumpImpl::DoWorkImpl+0x666
+3b 00000045`8c9fe870 00007ff9`509f8020     msedge!base::MessagePumpDefault::Run+0x137
+3c 00000045`8c9fe9f0 00007ff9`5084bdd3     msedge!base::sequence_manager::internal::ThreadControllerWithMessagePumpImpl::Run+0x100
+3d 00000045`8c9fea80 00007ff9`506b6cd4     msedge!base::RunLoop::Run+0x143
+3e 00000045`8c9febb0 00007ff9`506a6f18     msedge!content::RendererMain+0x514
+3f 00000045`8c9fee00 00007ff9`506a58bf     msedge!content::RunOtherNamedProcessTypeMain+0x19f
+40 00000045`8c9fef20 00007ff9`506a4dd1     msedge!content::ContentMainRunnerImpl::Run+0x29f
+41 00000045`8c9ff060 00007ff9`506a3445     msedge!content::ContentMain+0x21f
+42 00000045`8c9ff280 00007ff6`3284f5c8     msedge!ChromeMain+0x2a5
+43 00000045`8c9ff460 00007ff6`3284c623     msedge_exe!MainDllLoader::Launch+0x392
+44 00000045`8c9ff6f0 00007ff6`3290aee2     msedge_exe!wWinMain+0x468
+45 00000045`8c9ffbf0 00007ff9`bc5e26bd     msedge_exe!__scrt_common_main_seh+0x106
+46 00000045`8c9ffc30 00007ff6`32a17595     kernel32!BaseThreadInitThunk+0x1d
+47 00000045`8c9ffc60 00007ff9`bd5adfb8     msedge_exe!TargetBaseThreadInitThunk+0x40
+48 00000045`8c9ffcf0 00000000`00000000     ntdll!RtlUserThreadStart+0x28
+0:000> kb
+ # RetAddr               : Args to Child                                                           : Call Site
+00 00007ff9`bd5a5873     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!NtDelayExecution+0x14
+01 00007ff9`baeea0ed     : 00000000`00000000 00000000`00000000 00000045`8c9f09e0 00000000`00000000 : ntdll!RtlDelayExecution+0x43
+02 00007ff9`5d084dd1     : 00000000`00000000 00007ff9`00000000 ffffffff`dc3cba00 00000045`8c9f0ba8 : KERNELBASE!SleepEx+0x7d
+03 00007ff9`5d014de5     : 00000045`8c9fc0a8 00007ff9`5c51dce4 00000045`8c9f0c60 00000000`00000000 : msedge_elf!crashpad::`anonymous namespace'::UnhandledExceptionHandler+0xd1
+04 00007ff9`53b30cb5     : 00000001`00000000 00000000`0000003c 00000000`00000000 00007ff9`4ff2977c : msedge_elf!CrashForException_ExportThunk+0x15
+05 00007ff9`bd5f3eaf     : 00000045`8c9f0c60 00007ff9`4e5c0000 00000000`00000081 00000045`8c9f2210 : msedge!CrashForExceptionInNonABICompliantCodeRange+0x35
+06 00007ff9`bd56eae6     : 00000045`8c9f2210 00007ff9`4e5c0000 00007ff9`4ff2977c 00007ff9`5c51dce4 : ntdll!RtlpExecuteHandlerForException+0xf
+07 00007ff9`bd5a4b35     : 00000000`00000000 00000045`8c9f20c0 00000000`00000000 00007ff9`bd5a4a95 : ntdll!RtlDispatchException+0x286
+08 00007ff9`baf3051c     : 00006e78`076a04ff 00000045`8c9f2390 00000000`00000000 00000045`8c9f2390 : ntdll!RtlRaiseException+0x195
+09 00007ff9`55b529c2     : 000079e5`21983423 00000045`8c9f2380 00000000`00000001 00007ff9`5ba33cc1 : KERNELBASE!RaiseException+0x6c
+0a 00007ff9`55b529d9     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa 00000045`8c9f26d0 00000045`8c9f2390 : msedge!partition_alloc::internal::OnNoMemoryInternal+0x22
+0b 00007ff9`55b529f5     : 00007ff9`5ab68ec0 00000045`8c9f2af0 00000000`00000000 00000045`8c9f2390 : msedge!partition_alloc::TerminateBecauseOutOfMemory+0x9
+0c 00007ff9`57b30134     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!partition_alloc::internal::OnNoMemory+0x15
+0d 00007ff9`5370c393     : 00007ff9`5ab68ec0 00000045`8c9f2518 000079e5`21983263 00007ff9`5ab68ec0 : msedge!blink::ReportV8OOMError+0x1a4
+0e 00007ff9`5370c323     : aaaaaaaa`aaaaaaaa 00000045`8c9f26d0 00000045`8c9f0fc8 00000045`8c9f0ff0 : msedge!v8::Utils::ReportOOMFailure+0x23
+0f 00007ff9`4ea86dbe     : 00000000`00c0001c 00007ff9`5006e453 00006e78`00302328 00000000`00000000 : msedge!v8::internal::V8::FatalProcessOutOfMemory+0x2a3
+10 00007ff9`4ea29bac     : 00000001`00000000 00006e78`003022e8 00000001`08ec0101 00006e78`00302328 : msedge!v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath+0x298e
+11 00007ff9`4ea7974d     : 00000217`000040c0 00000001`00000001 00000045`8c9fb3f8 00007ff9`504c23cc : msedge!v8::internal::Factory::AllocateRaw+0x89c
+12 00007ff9`4ea7766c     : 00006e78`00302320 00007ff9`513441ca 00000217`f00923cd 00000000`00000004 : msedge!v8::internal::FactoryBase<v8::internal::Factory>::NewFixedArrayWithMap+0x5d
+13 00007ff9`4ea70460     : 00000004`8c9fb5d8 00000045`8c9fb5c8 00000045`8c9fb7b0 00006e78`003dc000 : msedge!v8::internal::BaseNameDictionary<v8::internal::NameDictionary,v8::internal::NameDictionaryShape>::Add+0x30c
+14 00007ff9`4edda13d     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa 00000000`00000000 00000000`00000000 : msedge!v8::internal::LookupIterator::ApplyTransitionToDataProperty+0x290
+15 00007ff9`4edd9293     : 00000000`00000005 80000000`80000000 80000000`80000000 ffffffff`ffffffff : msedge!v8::internal::Object::SetProperty+0x8bd
+16 00007ff9`4ff2977c     : 00000217`096a4629 00000217`f0092f31 00000217`f0092cb1 00000000`00000421 : msedge!v8::internal::Runtime_SetKeyedProperty+0x223
+17 00007ff9`4ffdbdb4     : 00000217`fc1942a5 00000217`ff89c821 00000217`0c284959 00000045`8c9fc1c0 : msedge!Builtins_CEntry_Return1_DontSaveFPRegs_ArgvOnStack_NoBuiltinExit+0x3c
+18 00007ff9`4fe9572c     : 00000217`000024b9 00000217`000023e1 00000217`0d2bdb71 00000217`0734c961 : msedge!Builtins_SetKeyedPropertyHandler+0x74
+19 00007ff9`4fe9572c     : 00000217`000023e1 00000217`0734c961 00000217`033be021 00000217`0d29f491 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+1a 00007ff9`4fe9572c     : 00000217`0d29f491 00000217`0d2bdb71 00000217`000023e1 00000217`000023e1 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+1b 00007ff9`4fe9572c     : 00000217`0734c961 00000217`fc193ba9 00000217`0734c961 00000217`00efc0dd : msedge!Builtins_InterpreterEntryTrampoline+0xec
+1c 00007ff9`4fe9572c     : 00000217`0c2b4ab1 00000217`fc193ba9 00000217`000023e1 00000217`fc193ba9 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+1d 00007ff9`4fe9572c     : 00000217`0c288d21 00000217`fc193b8d 00000217`000023e1 00000217`0c288d21 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+1e 00007ff9`4fe9572c     : 00000217`0c382355 00000217`fc193b8d 00000217`04c823a1 00000217`00efc911 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+1f 00007ff9`4fe9572c     : 00000217`04e75225 00000217`fc193b8d 00000217`fc193aed 00000217`fc193b8d : msedge!Builtins_InterpreterEntryTrampoline+0xec
+20 00007ff9`4fe9572c     : 00000217`04e74ec9 00000217`fc193b71 00000217`fc193aed 00000217`fc193b71 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+21 00007ff9`4fe9572c     : 00000217`000023e1 00000217`fc193aed 00000217`000023e1 00000217`000023e1 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+22 00007ff9`4fe9572c     : 00000217`000023e1 00000217`fc193aed 00000217`03233421 00000217`00fe265d : msedge!Builtins_InterpreterEntryTrampoline+0xec
+23 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`fc193aed 00000217`04cd8a6d 00000217`fc193aed : msedge!Builtins_InterpreterEntryTrampoline+0xec
+24 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`04ce8851 00000217`00c72c9d 00000000`00000072 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+25 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`04ce8861 00000217`00c72cbd 00000000`00000088 : msedge!Builtins_InterpreterEntryTrampoline+0xec
+26 00007ff9`4fe9572c     : 00000217`04ce87e1 00000217`fc193add 00000217`04cd8a6d 00000217`04cd8a6d : msedge!Builtins_InterpreterEntryTrampoline+0xec
+27 00007ff9`4fe93b1c     : 00000217`03b5be31 00000217`fc193a99 00000217`032340d9 00000000`0000002e : msedge!Builtins_InterpreterEntryTrampoline+0xec
+28 00007ff9`4fe9371b     : 00000000`00000000 00000000`00000000 00000000`00000002 00000000`00000000 : msedge!Builtins_JSEntryTrampoline+0x5c
+29 00007ff9`4ed13e98     : 00000217`00000040 00000217`f00469c9 00006e78`00304000 00000000`00000031 : msedge!Builtins_JSEntry+0xdb
+2a 00007ff9`4ef76fa2     : 00006e78`003020f0 00000016`00000001 00006e78`003020f0 00000217`00002401 : msedge!v8::internal::Execution::Call+0x258
+2b 00007ff9`4ef75d60     : 00000000`00000006 000079e5`2198da23 aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!v8::Function::Call+0x302
+2c 00007ff9`50333fb1     : 00000045`8c9fcf50 aaaaaaaa`aaaaaaaa ffffffff`00000000 00000045`8c9fcec0 : msedge!blink::V8ScriptRunner::CallFunction+0x250
+2d 00007ff9`50333e7d     : aa000ab4`6daaaaaa 00000ff3`00aaaaaa 000079e5`2198d823 00000ff3`003d1b70 : msedge!blink::bindings::CallbackInvokeHelper<blink::CallbackFunctionBase,2,0>::CallInternal+0x71
+2e 00007ff9`4f40e3e1     : 00000045`8c9fd070 00007ff9`4f40e320 00006e78`00328388 00000fff`29d28434 : msedge!blink::bindings::CallbackInvokeHelper<blink::CallbackFunctionBase,2,0>::Call+0xd
+2f 00007ff9`4f40c88b     : 00000217`03233421 000079e5`2198d863 00006e78`00302048 aaaaaaaa`aaaaaaaa : msedge!blink::V8EventHandlerNonNull::InvokeWithoutRunnabilityCheck+0x191
+30 00007ff9`4ef708df     : 00007ff9`4fe9572c 00000217`04ce8861 00000217`00c72cbd 00000000`00000092 : msedge!blink::JSEventHandler::InvokeInternal+0x1eb
+31 00007ff9`4ef663b5     : 00007ff9`5be89760 aaaaaaaa`aaaaaa00 00000ff3`0ea49648 00007ff9`5be89760 : msedge!blink::JSBasedEventListener::Invoke+0xf6f
+32 00007ff9`4ef6a806     : 00000000`00055700 00000ff3`0ea272b4 00000ff3`0ea27250 00006e78`07d09450 : msedge!blink::EventTarget::FireEventListeners+0x415
+33 00007ff9`4ef62694     : 00000000`01252f01 00000045`8c9fd660 00000ff3`0010d540 000079e5`2198c3b3 : msedge!blink::EventTarget::FireEventListeners+0x176
+34 00007ff9`5163936d     : 00006e78`003ea5b8 00000045`8c9fd850 00000045`00000001 00000045`8c9fd8e0 : msedge!blink::EventTarget::DispatchEventInternal+0x34
+35 00007ff9`4ea37eb6     : 00000000`00000000 00000000`00000000 00000000`00000000 aaaaaaaa`aaaaaaaa : msedge!blink::MessagePort::Accept+0x23d
+36 00007ff9`5270a98d     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!base::internal::Invoker<base::internal::BindState<void (mojo::Connector::*)(unsigned int),base::internal::UnretainedWrapper<mojo::Connector,base::RawPtrBanDanglingIfSupported> >,void (unsigned int)>::Run+0x3216
+37 00007ff9`4ea47d6c     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!base::RepeatingCallback<void __cdecl(edge::webshot::BitmapImageData const & __ptr64)>::Run+0x31
+38 00007ff9`4e96451e     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!mojo::SimpleWatcher::OnHandleReady+0xbfc
+39 00007ff9`4e961fe6     : aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa aaaaaaaa`aaaaaaaa : msedge!base::TaskAnnotator::RunTaskImpl+0x1ee
+3a 00007ff9`5254dc47     : 00006e78`008813c0 00007ff9`509f88a8 00000000`00000030 7fffffff`ffffffef : msedge!base::sequence_manager::internal::ThreadControllerWithMessagePumpImpl::DoWorkImpl+0x666
+3b 00007ff9`509f8020     : 00000045`8c9fec98 00000045`8c9feb30 00000045`8c9fec10 00007ff9`4f27b7e3 : msedge!base::MessagePumpDefault::Run+0x137
+3c 00007ff9`5084bdd3     : 00007ff9`5c4214f8 00006e78`00389ab0 59ddf5dc`4ba4356f 00000000`00000120 : msedge!base::sequence_manager::internal::ThreadControllerWithMessagePumpImpl::Run+0x100
+3d 00007ff9`506b6cd4     : 00007ff9`5c41e100 00007ff9`4f2f30dd 00006e78`00000000 00000000`00000008 : msedge!base::RunLoop::Run+0x143
+3e 00007ff9`506a6f18     : 00000045`8c9ff390 00007ff9`4f04019c 00000000`00000000 aaaaaaaa`aaaaaaaa : msedge!content::RendererMain+0x514
+3f 00007ff9`506a58bf     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : msedge!content::RunOtherNamedProcessTypeMain+0x19f
+40 00007ff9`506a4dd1     : 00006e78`0024c320 00006e78`0023c3e0 7fffffff`ffffffff 00000045`8c9ff140 : msedge!content::ContentMainRunnerImpl::Run+0x29f
+41 00007ff9`506a3445     : 00007ff6`32790000 000059b0`0028c140 00000045`8c9ff360 00000188`68a051c0 : msedge!content::ContentMain+0x21f
+42 00007ff6`3284f5c8     : 00007ff6`32aa05a0 00007ff9`506a31a0 00000000`32aa0500 000059b0`0029c210 : msedge!ChromeMain+0x2a5
+43 00007ff6`3284c623     : 00000000`0000000a 00000045`8c9ff7d0 00000045`8c177000 00000045`8c9ff880 : msedge_exe!MainDllLoader::Launch+0x392
+44 00007ff6`3290aee2     : 00000000`00000000 00007ff6`3290af59 00000000`00000000 00007ff9`baf16690 : msedge_exe!wWinMain+0x468
+45 00007ff9`bc5e26bd     : 00000000`00000000 00000045`8c9ffc40 00000000`00000030 00000000`00000000 : msedge_exe!__scrt_common_main_seh+0x106
+46 00007ff6`32a17595     : 00000000`00000000 00007ff6`3290af50 00000045`8c177000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+47 00007ff9`bd5adfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : msedge_exe!TargetBaseThreadInitThunk+0x40
+48 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
