@@ -1,6 +1,9 @@
 # Welcome to Hoyt's Windows Fuzzing Repo
 2 DEC 2022 at 1515 EST
 
+## Fuzzing with https://srd.cx/cve-2022-26730/
+This CVE-2022-26730 PoC is know to potentially cause arbitrary code execution
+
 ## Repo Coverage
 
 ```
