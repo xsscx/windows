@@ -1,0 +1,209 @@
+
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 17763 MP (16 procs) Free x64
+Product: LanManNt, suite: TerminalServer SingleUserTS
+Edition build lab: 17763.1.amd64fre.rs5_release.180914-1434
+Machine Name:
+Debug session time: Sun Dec 25 19:38:56.000 2022 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 0:01:26.000
+................................................................
+............................................................
+Loading unloaded module list
+.
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(2be8.239c): Unknown exception - code c000027b (first/second chance not available)
+For analysis of this file, run !analyze -v
+KERNELBASE!RaiseFailFastException+0xaf:
+00007ff8`0c83298f 0f1f440000      nop     dword ptr [rax+rax]
+0:007> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 8343
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 42298
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 3281
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 56655
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 429
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 86
+
+    Key  : WER.OS.Branch
+    Value: rs5_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2018-09-14T14:34:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.17763.1
+
+    Key  : WER.Process.Version
+    Value: 10.0.17763.1
+
+
+FILE_IN_CAB:  LogonUI.exe.11240.dmp
+
+NTGLOBALFLAG:  0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=00000040f4e79010 rbx=00000040f4e795c0 rcx=00000040f4e79010
+rdx=0000000000000000 rsi=0000000000000002 rdi=00000040f4e79010
+rip=00007ff80c83298f rsp=00000040f4e78f30 rbp=00000040f4e79600
+ r8=0000000000000000  r9=0000000000000000 r10=0000000000000000
+r11=00000040f4e795c0 r12=0000000000000004 r13=0000000000000001
+r14=0000000000000000 r15=0000018bae8f9958
+iopl=0         nv up ei pl zr na po nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000244
+KERNELBASE!RaiseFailFastException+0xaf:
+00007ff8`0c83298f 0f1f440000      nop     dword ptr [rax+rax]
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007fffec609d81 (Windows_UI_Xaml!DCompSurface::InitializeSurface+0x0000000000269321)
+   ExceptionCode: c000027b
+  ExceptionFlags: 00000001
+NumberParameters: 2
+   Parameter[0]: 0000018bae83c100
+   Parameter[1]: 0000000000000003
+
+PROCESS_NAME:  LogonUI.exe
+
+ERROR_CODE: (NTSTATUS) 0xc000027b - An application-internal exception has occurred.
+
+EXCEPTION_CODE_STR:  c000027b
+
+EXCEPTION_PARAMETER1:  0000018bae83c100
+
+EXCEPTION_PARAMETER2:  0000000000000003
+
+STACK_TEXT:  
+00000040`f4e78f30 00007ff8`0f7c4230     : 00000000`00000000 00000000`00000003 00000000`00000000 00007ff8`0f8b9540 : KERNELBASE!RaiseFailFastException+0xaf
+00000040`f4e79500 00007fff`ec609d81     : 0000018b`ae8f9900 00000000`00000003 0000018b`ae83c100 00000000`00000000 : combase!RoFailFastWithErrorContextInternal2+0x480
+00000040`f4e797e0 00007fff`ec3a09ff     : 00000000`00000870 0000018b`00000003 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!DCompSurface::InitializeSurface+0x269321
+00000040`f4e798a0 00007fff`ec3a08ef     : 0000018b`a8976720 00000000`00000000 0000018b`a896f400 00007fff`ec273a4f : Windows_UI_Xaml!DCompSurface::Create+0xcf
+00000040`f4e79930 00007fff`ec3a0705     : 00000000`00000000 00000000`00000003 00000000`00000000 00000000`00000001 : Windows_UI_Xaml!DCompTreeHost::CreateSurface+0xbf
+00000040`f4e799b0 00007fff`ec270f8d     : 00000000`00000870 00000040`f4e79ad9 00000000`00000f00 00000000`8000ffff : Windows_UI_Xaml!HWTextureManager::CreateTexture+0xf5
+00000040`f4e79a40 00007fff`ec301e94     : 00000000`00000000 00000000`00000000 0000018b`ae5654f0 0000018b`ae63a790 : Windows_UI_Xaml!ImageSurfaceWrapper::AllocateHardwareResources+0xb9
+00000040`f4e79b20 00007fff`ec2699a8     : 00000000`00000000 00000040`f4e79bc0 0000018b`ae63a790 00007fff`eccc3f98 : Windows_UI_Xaml!ImageSurfaceWrapper::EnsureHardwareResources+0xa0
+00000040`f4e79b80 00007fff`ec2695a3     : 00000000`00000000 00000000`00000000 0000018b`ae63a790 00000000`00000000 : Windows_UI_Xaml!CImageSource::EnsureAndUpdateHardwareResources+0xe8
+00000040`f4e79be0 00007fff`ec4ab074     : 0000018b`ae63a790 00000000`00000000 00000040`f4e79d80 0000018b`ae581830 : Windows_UI_Xaml!CBitmapImage::EnsureAndUpdateHardwareResources+0xe3
+00000040`f4e79c40 00007fff`ec341c01     : 00000000`00000000 00000000`00000020 00000000`00000050 00000000`00000000 : Windows_UI_Xaml!CImageBrush::EnsureAndUpdateHardwareResources+0x24
+00000040`f4e79c80 00007fff`ec340cd6     : 00000040`f4e79f30 00007ff8`0955d41b 0000018b`a8bdc810 00007fff`ec2ecb28 : Windows_UI_Xaml!BaseContentRenderer::GetBrushParameters+0x241
+00000040`f4e79de0 00007fff`ec41b710     : 00000000`00000000 00000000`00000000 0000018b`ad8162c0 00007ff8`09369d22 : Windows_UI_Xaml!VisualContentRenderer::GeneralImageRenderContent+0x1a6
+00000040`f4e7a020 00007fff`ec2dd7f1     : 00000000`00000001 00000000`00000001 00000000`0000024a 0000018b`ae466af0 : Windows_UI_Xaml!BaseContentRenderer::ImageRenderContent+0xd0
+00000040`f4e7a0e0 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7a300 00000000`00000000 00000000`ae62ec01 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x871
+00000040`f4e7a220 00007fff`ec2de46c     : 00000040`f4e7a890 00000040`00000000 00000040`f4e7a870 00000000`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7a570 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000001 00000000`00000000 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7a640 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ae55ba10 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7a6a0 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7a800 00000000`00000000 00000000`ae62eb00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7a7e0 00007fff`ec2de46c     : 00007fff`eccbf2d0 00000040`00000000 00000040`f4e7ae30 00000040`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7ab30 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00000040`f4e7b930 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7ac00 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ae55c610 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7ac60 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7ae00 00000000`00000000 00000000`ae62d600 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7ada0 00007fff`ec2de46c     : 00007fff`eccbf2d0 00000000`00000000 00000040`f4e7b3f0 00000040`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7b0f0 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7b1c0 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ae5926b0 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7b220 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7b400 00000000`00000000 00000000`ae5c8c00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7b360 00007fff`ec2de46c     : 00007fff`eccbf2d0 00007fff`00000000 00000040`f4e7b9b0 00007fff`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7b6b0 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000001 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7b780 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ae4ecda0 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7b7e0 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7ba00 00000000`00000000 00000000`ae4f0a00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7b920 00007fff`ec2de46c     : 00007fff`eccbf2d0 00000000`00000000 00000040`f4e7bf70 00000000`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7bc70 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7bd40 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ad784880 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7bda0 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7bf00 00000000`00000000 00000000`ed0ecd00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7bee0 00007fff`ec2de46c     : 00000040`f4e7c550 0000018b`ad7f1380 00000040`f4e7c550 00000040`f4e7c299 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7c230 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000002 00000000`00000000 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7c300 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ad7943b0 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7c360 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7c500 00000000`00000000 00000000`ad794700 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7c4a0 00007fff`ec2de46c     : 00007fff`eccbf2d0 00007fff`00000000 00000040`f4e7caf0 00000000`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7c7f0 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7c8c0 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ad786140 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7c920 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7cb00 00000000`00000000 00000000`ad7b3f00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7ca60 00007fff`ec2de46c     : 00007fff`eccbf2d0 0000018b`00000000 00000040`f4e7d0b0 0000018b`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7cdb0 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7ce80 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ad7d9a30 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7cee0 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7d100 00000000`00000000 00000000`ae542f00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7d020 00007fff`ec2de46c     : 00005325`fc972fb1 00000000`00000000 00000040`f4e7d670 00000000`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7d370 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00007fff`ec2c5f19 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7d440 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ad7f0ff0 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7d4a0 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7d600 00000000`00000000 00000000`ad802000 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7d5e0 00007fff`ec2de46c     : 00007fff`eccbf2d0 00000040`00000000 00000040`f4e7dc30 0000018b`3f800000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7d930 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000000 00007fff`ec2d84bf : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7da00 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ad808220 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7da60 00007fff`ec2df53a     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`ed0ecd00 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7dba0 00007fff`ec2de46c     : 00000040`f4e7e210 0000018b`ad7dd580 00000040`f4e7e210 00000040`f4e7df59 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7def0 00007fff`ec2de713     : 00000000`00000000 00000000`00000000 00000000`00000002 00005325`fc9723a1 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7dfc0 00007fff`ec2dd364     : 00000000`00000000 00000000`00000000 00000000`00000000 0000018b`a897b900 : Windows_UI_Xaml!HWWalk::RenderChildren+0xa3
+00000040`f4e7e020 00007fff`ec2df53a     : 00000000`00000000 00000040`f4e7e200 0000018b`00000000 00000000`ad808000 : Windows_UI_Xaml!HWWalk::RenderContentAndChildren+0x3e4
+00000040`f4e7e160 00007fff`ec2de46c     : 00000000`00004000 00007ff8`09385600 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!HWWalk::RenderProperties+0x4da
+00000040`f4e7e4b0 00007fff`ec3a81c9     : 00000000`00000000 00000040`f4e7e680 00000000`00000000 0000018b`a89513d0 : Windows_UI_Xaml!HWWalk::Render+0x13c
+00000040`f4e7e580 00007fff`ec28d7d0     : 00000000`00000001 00000040`f4e7e8b0 0000018b`a89513d0 0000018b`a897b190 : Windows_UI_Xaml!HWWalk::RenderRootImpl+0x259
+00000040`f4e7e840 00007fff`ec31ed86     : 00000000`00000001 00000000`00000001 0000018b`a896f9d0 0000018b`a897b900 : Windows_UI_Xaml!CCoreServices::RenderWalk+0xbc
+00000040`f4e7e8f0 00007fff`ec2800ea     : 0000018b`00000001 0000018b`a89757e0 00000040`f4e7eb30 00007fff`ec467cdb : Windows_UI_Xaml!CCoreServices::NWDrawTree+0xa06
+00000040`f4e7ea70 00007fff`ec27ff7f     : 000001d1`f7c4d0fe 0000018b`a8947e50 00000000`00000000 00000000`00000402 : Windows_UI_Xaml!CCoreServices::NWDrawMainTree+0xba
+00000040`f4e7eac0 00007fff`ec27feb5     : 0000018b`a8947e50 00000000`00000000 00000000`0001004a 00007ff8`106de850 : Windows_UI_Xaml!CWindowRenderTarget::Draw+0x6f
+00000040`f4e7eb00 00007fff`ec3f56c1     : 0000018b`a89757e0 0000018b`a8974a40 00000040`f495d800 0000018b`a8a62650 : Windows_UI_Xaml!CXcpBrowserHost::OnTick+0xb5
+00000040`f4e7eb50 00007fff`ec3f55e3     : 00000000`00963426 00000000`00000000 00000000`00000000 00000000`00000000 : Windows_UI_Xaml!CXcpDispatcher::Tick+0x81
+00000040`f4e7eb90 00007fff`ec3f4da4     : 0000018b`a893e2f0 00000000`00000402 0000018b`a893e300 00000000`00000000 : Windows_UI_Xaml!CXcpDispatcher::OnReentrancyProtectedWindowMessage+0x43
+00000040`f4e7ebc0 00007fff`ec363a5b     : 0000018b`a8974880 00007fff`ec363940 00000040`f4e7eca8 00007ff8`00000000 : Windows_UI_Xaml!CXcpDispatcher::WindowProc+0xe4
+00000040`f4e7ec20 00007fff`ec36395c     : 0000018b`a8974880 00007fff`ec363940 00000000`00000000 0000018b`a896f420 : Windows_UI_Xaml!CDeferredInvoke::DispatchQueuedMessage+0xbb
+00000040`f4e7ec70 00007ff8`0955741c     : 0000018b`a8bdc801 00007fff`ec363900 00000000`00000000 0000018b`a8941ed0 : Windows_UI_Xaml!CXcpDispatcher::MessageTimerCallbackStatic+0x1c
+00000040`f4e7eca0 00007ff8`095787dd     : 0000018b`a895e0b0 00000000`000000c6 0000018b`a8965a60 00007ff8`095555df : CoreMessaging!Microsoft__CoreUI__Dispatch__TimeoutHandler$CallbackThunk+0x17c
+
+STACK_COMMAND:  ~7s; .ecxr ; kb
+
+FAULTING_SOURCE_LINE:  onecoreuap\windows\dxaml\xcp\plat\win\desktop\dcompsurface.cpp
+
+FAULTING_SOURCE_FILE:  onecoreuap\windows\dxaml\xcp\plat\win\desktop\dcompsurface.cpp
+
+FAULTING_SOURCE_LINE_NUMBER:  247
+
+SYMBOL_NAME:  Windows_UI_Xaml!DCompSurface::InitializeSurface+269321
+
+MODULE_NAME: Windows_UI_Xaml
+
+IMAGE_NAME:  Windows.UI.Xaml.dll
+
+FAILURE_BUCKET_ID:  STOWED_EXCEPTION_c000027b_Windows.UI.Xaml.dll!DCompSurface::InitializeSurface
+
+OS_VERSION:  10.0.17763.1
+
+BUILDLAB_STR:  rs5_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  10.0.17763.2989
+
+FAILURE_ID_HASH:  {36414186-ff16-a719-3a5f-cd8c65d2f580}
+
+Followup:     MachineOwner
+---------
+
