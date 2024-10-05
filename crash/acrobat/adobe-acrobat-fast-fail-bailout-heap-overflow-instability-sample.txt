@@ -1,0 +1,184 @@
+
+Microsoft (R) Windows Debugger Version 10.0.25200.1003 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\dumps\Acrobat.exe.22912.dmp]
+User Mini Dump File with Full Memory: Only application data is available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 22621 MP (32 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 22621.1.amd64fre.ni_release.220506-1250
+Machine Name:
+Debug session time: Thu Dec 29 08:03:12.000 2022 (UTC - 5:00)
+System Uptime: 0 days 0:12:07.178
+Process Uptime: 0 days 0:02:39.000
+............................................................
+Loading unloaded module list
+.
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(5980.630): Security check failure or stack buffer overrun - code c0000409 (first/second chance not available)
+Subcode: 0x7 FAST_FAIL_FATAL_APP_EXIT 
+For analysis of this file, run !analyze -v
+ucrtbase!abort+0x4e:
+00007ffc`40d8f61e cd29            int     29h
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 593
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 1157
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 0
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 46
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 53559
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 81
+
+    Key  : FailFast.Name
+    Value: FATAL_APP_EXIT
+
+    Key  : FailFast.Type
+    Value: 7
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 727
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 159
+
+    Key  : WER.OS.Branch
+    Value: ni_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2022-05-06T12:50:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22621.1
+
+    Key  : WER.Process.Version
+    Value: 22.3.20282.0
+
+
+FILE_IN_CAB:  Acrobat.exe.22912.dmp
+
+NTGLOBALFLAG:  400
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000000000000001 rbx=000001a71f73c110 rcx=0000000000000007
+rdx=000079ccb36d3085 rsi=0000000040000009 rdi=0000000000000000
+rip=00007ffc40d8f61e rsp=00000082df91d7d0 rbp=00000082df91d8d9
+ r8=00007ffc40e10920  r9=00000082df91d748 r10=0000000000000012
+r11=00000082df91d690 r12=0000000000000000 r13=0000000000000001
+r14=000001a71f73c118 r15=0000000000010f94
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000202
+ucrtbase!abort+0x4e:
+00007ffc`40d8f61e cd29            int     29h
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ffc40d8f61e (ucrtbase!abort+0x000000000000004e)
+   ExceptionCode: c0000409 (Security check failure or stack buffer overrun)
+  ExceptionFlags: 00000001
+NumberParameters: 1
+   Parameter[0]: 0000000000000007
+Subcode: 0x7 FAST_FAIL_FATAL_APP_EXIT 
+
+PROCESS_NAME:  Acrobat.exe
+
+ERROR_CODE: (NTSTATUS) 0xc0000409 - The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application.
+
+EXCEPTION_CODE_STR:  c0000409
+
+EXCEPTION_PARAMETER1:  0000000000000007
+
+FAULTING_THREAD:  00000630
+
+STACK_TEXT:  
+00000082`df91d7d0 00000000`6824180e     : 00000000`00000003 00000000`00000003 00000000`00000000 00000000`00000003 : ucrtbase!abort+0x4e
+00000082`df91d800 00000000`68091209     : 000001a7`1f670000 00007ffc`4380ce8a 000001a7`1f770000 00000000`00000000 : Acrobat!AX_PDXlateToHostEx+0xc1a7e
+00000082`df91d830 00000000`6818e633     : 00000000`00000000 00000000`0000041a 00000000`00000002 00000000`00000000 : Acrobat!AIDE::AIDEFormatType::operator=+0xac0e9
+00000082`df91d860 00000000`67bee8fa     : 000001a7`269e3010 000001a7`1f76d420 00000000`0000041a 00000000`00000000 : Acrobat!AX_PDXlateToHostEx+0xe8a3
+00000082`df91d940 00007ffc`41608271     : 00000000`00000000 00000000`00000001 00000000`80000012 00000000`80000012 : Acrobat!AIDE::AIDEOutputStreamCallBacks::operator=+0x1e6a
+00000082`df91d990 00007ffc`41607f2c     : 00000000`00000008 00000000`67bee530 00000000`00010f94 00000000`80000000 : user32!UserCallWinProcCheckWow+0x2d1
+00000082`df91daf0 00007ffc`41612ded     : 00000000`00000000 00000000`00000000 00000000`00000001 00000000`80000000 : user32!DispatchClientMessage+0x9c
+00000082`df91db50 00007ffc`43872e44     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : user32!_fnDWORD+0x3d
+00000082`df91dbb0 00007ffc`40bf14d4     : 00007ffc`4161190f 00000000`00000060 ffffffff`ffffffff fffffe58`e0960ad7 : ntdll!KiUserCallbackDispatcherContinue
+00000082`df91dc38 00007ffc`4161190f     : 00000000`00000060 ffffffff`ffffffff fffffe58`e0960ad7 00007ffc`416080c7 : win32u!NtUserPeekMessage+0x14
+00000082`df91dc40 00007ffc`416117dc     : 00000000`00000001 00000082`dfb9a800 00000000`00000000 00000000`00000000 : user32!_PeekMessage+0x3f
+00000082`df91dcb0 00000000`6824d40e     : 00000000`00000001 00000082`df91dd80 000001a7`2512be00 00000000`00000430 : user32!PeekMessageW+0x9c
+00000082`df91dd20 00000000`6824cc57     : 00000000`00000000 00000000`00000007 000001a7`28d09bb8 00000000`00090f6a : Acrobat!AX_PDXlateToHostEx+0xcd67e
+00000082`df91dda0 00000000`6824dda6     : 000001a7`1f762f50 00000000`00000001 00000082`df91f100 00000000`00000ff0 : Acrobat!AX_PDXlateToHostEx+0xccec7
+00000082`df91dde0 00000000`67bea5dc     : 00000000`00000001 00000000`00000002 00000000`00000002 00000000`00000000 : Acrobat!AX_PDXlateToHostEx+0xce016
+00000082`df91de10 00000000`67be4bff     : 00000000`00000001 00000000`00000001 00000000`00000000 000001a7`1f76e8d0 : Acrobat!AcroWinMainSandbox+0x88dc
+00000082`df91f090 00000000`67be1e79     : 00000000`00000000 00000000`00000000 00000082`df91f6e0 00000082`df91f6e0 : Acrobat!AcroWinMainSandbox+0x2eff
+00000082`df91f140 00007ff7`8608ad62     : 00000000`67af0000 00000000`67be1d00 00000082`df91f6c0 00000082`df91f6e0 : Acrobat!AcroWinMainSandbox+0x179
+00000082`df91f5c0 00007ff7`862aff42     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Acrobat_exe!sidestep::PreamblePatcher::PatchNearJumpOrCall+0x3642
+00000082`df91fae0 00007ffc`41a026bd     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : Acrobat_exe!sidestep::PreamblePatcher::Unpatch+0x1127d2
+00000082`df91fb20 00007ffc`4382dfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+00000082`df91fb50 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
+
+
+STACK_COMMAND:  ~0s ; .cxr ; kb
+
+SYMBOL_NAME:  ucrtbase!abort+4e
+
+MODULE_NAME: ucrtbase
+
+IMAGE_NAME:  ucrtbase.dll
+
+FAILURE_BUCKET_ID:  FAIL_FAST_FATAL_APP_EXIT_c0000409_ucrtbase.dll!abort
+
+OS_VERSION:  10.0.22621.1
+
+BUILDLAB_STR:  ni_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  10.0.22621.608
+
+FAILURE_ID_HASH:  {e31753ac-c98a-8055-3663-47e707543d20}
+
+Followup:     MachineOwner
+---------
+

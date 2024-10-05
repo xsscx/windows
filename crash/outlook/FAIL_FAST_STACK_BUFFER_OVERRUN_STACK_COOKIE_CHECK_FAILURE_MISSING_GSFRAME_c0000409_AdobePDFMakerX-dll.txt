@@ -1,0 +1,231 @@
+
+Microsoft (R) Windows Debugger Version 10.0.25200.1003 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\dumps\OUTLOOK.EXE.7036.dmp]
+User Mini Dump File with Full Memory: Only application data is available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 22621 MP (32 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 22621.1.amd64fre.ni_release.220506-1250
+Machine Name:
+Debug session time: Thu Jan 26 08:59:30.000 2023 (UTC - 5:00)
+System Uptime: 0 days 2:02:01.566
+Process Uptime: 0 days 1:59:42.000
+................................................................
+................................................................
+................................................................
+................................................................
+....................................................
+Loading unloaded module list
+...............................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(1b7c.1b50): Security check failure or stack buffer overrun - code c0000409 (first/second chance not available)
+Subcode: 0x2 FAST_FAIL_STACK_COOKIE_CHECK_FAILURE 
+For analysis of this file, run !analyze -v
+AdobePDFMakerX!SetResourceLang+0x21a37d:
+00000000`70624abd cd29            int     29h
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 6140
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 45726
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 25
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 1
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 161
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 108
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 8882
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 336
+
+    Key  : CLR.BuiltBy
+    Value: NET481REL1LAST_C
+
+    Key  : CLR.Engine
+    Value: CLR
+
+    Key  : CLR.Version
+    Value: 4.8.9105.0
+
+    Key  : FailFast.Name
+    Value: STACK_COOKIE_CHECK_FAILURE
+
+    Key  : FailFast.Type
+    Value: 2
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 7321
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 7182
+
+    Key  : WER.OS.Branch
+    Value: ni_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2022-05-06T12:50:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22621.1
+
+    Key  : WER.Process.Version
+    Value: 16.0.15831.20252
+
+
+FILE_IN_CAB:  OUTLOOK.EXE.7036.dmp
+
+NTGLOBALFLAG:  400
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000000000000001 rbx=0000023c7ecb96a8 rcx=0000000000000002
+rdx=00000000707406c8 rsi=ffffffffffffffff rdi=0000000000000000
+rip=0000000070624abd rsp=000000578493a150 rbp=000000578493a290
+ r8=0000023c2140e040  r9=0000000000000001 r10=0000000000000003
+r11=000000578493a0c0 r12=0000000000000000 r13=0000000000000001
+r14=0000000000000000 r15=0000000000000001
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000202
+AdobePDFMakerX!SetResourceLang+0x21a37d:
+00000000`70624abd cd29            int     29h
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 0000000070624abd (AdobePDFMakerX!SetResourceLang+0x000000000021a37d)
+   ExceptionCode: c0000409 (Security check failure or stack buffer overrun)
+  ExceptionFlags: 00000001
+NumberParameters: 1
+   Parameter[0]: 0000000000000002
+Subcode: 0x2 FAST_FAIL_STACK_COOKIE_CHECK_FAILURE 
+
+PROCESS_NAME:  OUTLOOK.EXE
+
+ERROR_CODE: (NTSTATUS) 0xc0000409 - The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application.
+
+EXCEPTION_CODE_STR:  c0000409
+
+EXCEPTION_PARAMETER1:  0000000000000002
+
+FAULTING_THREAD:  00001b50
+
+STACK_TEXT:  
+00000057`8493a150 00000000`7043a47d     : 006f0025`84b3a1fe 0000023c`00000000 00000057`8493a290 00000000`7067642c : AdobePDFMakerX!SetResourceLang+0x21a37d
+00000057`8493a190 00000000`704857fd     : 0000023c`7b918f70 00000000`00040070 0000023c`7ea882e8 00000000`00000000 : AdobePDFMakerX!SetResourceLang+0x2fd3d
+00000057`8493b200 00000000`70486693     : 00000000`00000000 00000057`8493b580 00000000`00000000 00720044`0065006e : AdobePDFMakerX!SetResourceLang+0x7b0bd
+00000057`8493b370 00000000`70c773e2     : 0000023c`00000005 00000000`00000015 00000000`70cd9580 00000000`00000000 : AdobePDFMakerX!SetResourceLang+0x7bf53
+00000057`8493b4b0 00000000`70c76a11     : 00000057`8493dab8 00000057`8493dac0 00000000`7451bd50 00000000`70ad56b2 : PDFMOutlookCore!SetNeedsUpdation+0x172c2
+00000057`8493b660 00000000`70bbc59f     : 0000023c`7ebc8900 00000057`8493b7b0 00000000`00000018 01d92ff8`9795c9af : PDFMOutlookCore!SetNeedsUpdation+0x168f1
+00000057`8493b6c0 00000000`70b8ce0a     : 0000023c`7b918f90 00000057`8493b858 00000000`00040070 00000057`8493ba00 : PDFMOutlookCore+0xec59f
+00000057`8493b750 00000000`70b9637c     : 0000023c`7b891ff0 00000057`8493c570 0000023c`7ebc1440 00000057`8493ccb8 : PDFMOutlookCore+0xbce0a
+00000057`8493c250 00000000`70b90c1b     : 0000023c`7b891ff0 00000000`00000000 00000057`8493d000 00000057`8493d070 : PDFMOutlookCore+0xc637c
+00000057`8493ce10 00000000`70bb018d     : 0000023c`7b891ff0 00000057`00000004 0000023c`7e99f8a0 00000000`00000000 : PDFMOutlookCore+0xc0c1b
+00000057`8493d0f0 00000000`70ba395f     : 0000023c`7e99f8a0 00000057`8493d958 00000057`8493da50 00000000`70c76a11 : PDFMOutlookCore+0xe018d
+00000057`8493d130 00000000`70c53fd4     : 0000023c`7b891ff0 00000000`00000004 00000057`8493d958 00000057`8493d950 : PDFMOutlookCore+0xd395f
+00000057`8493d1b0 00000000`70c6010c     : 0000023c`7ea44e50 0000023c`7ea9d520 0000023c`00000000 00000000`7451bdc5 : PDFMOutlookCore!PDFLInit+0x57474
+00000057`8493d9c0 00000000`7451bdec     : 0000023c`7ea9d520 00000000`70c600e0 00000057`8493da50 00000057`8493dac0 : PDFMOutlookCore!OutlookOnAction+0x2c
+00000057`8493da00 00007ff9`aadb96bf     : 0000023c`2e5e71b0 0000023c`7ea9d520 0000023c`3b89e090 0000023c`7b4f9610 : PDFMOutlookAddin+0xbdec
+00000057`8493da40 00007ff9`aad99fb6     : 00000000`00000000 00007ff9`aad99ee3 0000023c`7b4f9610 00000057`8493dc98 : oleaut32!DispCallFuncAmd64+0x7f
+00000057`8493da90 00007ff9`aad99715     : 00000000`00000001 000003ff`00002400 00000000`00008019 00000000`0000000c : oleaut32!DispCallFunc+0x236
+00000057`8493db50 00000000`7452ee8c     : 0000023c`7bbe4138 0000023c`3699cfe8 0000023c`36995de0 00000000`00000018 : oleaut32!CTypeInfo2::Invoke+0x545
+00000057`8493dee0 00007ff9`2bd5a3bb     : 0000023c`2e5e71b0 00007ff9`00000004 00007ff9`2d605200 00000000`00000800 : PDFMOutlookAddin!DllUnregisterServer+0x6a7c
+00000057`8493df50 00007ff9`2bd5a655     : 0000023c`3b9aaad0 0000023c`7bbe4138 0000023c`3b9aa952 0000023c`7e94cf60 : mso+0xca3bb
+00000057`8493e020 00007ff9`2bd5a505     : 0000023c`7ea9d520 0000023c`7bbe4138 0000023c`3b9aa8d8 00000000`00000000 : mso+0xca655
+00000057`8493e0b0 00007ff9`2cced7fa     : 0000023c`3bd21630 00000000`00000018 0000023c`3bd21630 0000023c`7ea9d520 : mso+0xca505
+00000057`8493e0f0 00007ff9`2ccbfa46     : 0000023c`3bd21630 00000000`00000075 0000023c`7e94cf70 0000023c`7e94cf40 : mso+0x105d7fa
+00000057`8493e180 00007ff9`2de9efb1     : 0000023c`7e94cf40 00000000`00000075 00000057`8493e270 00000000`00000000 : mso+0x102fa46
+00000057`8493e1f0 00007ff9`2e7c04e0     : 0000023c`7e94cf40 0000023c`23781510 00007ff9`345263a8 0000023c`2dfa3f08 : mso98win32client!OfficeSpace::FSControl::SetValue+0x5b1
+00000057`8493e2a0 00007ff9`2ec4a0c2     : 00000000`00000000 00000000`00000000 0000023c`7ebb5400 00000000`00000075 : mso98win32client!`Mso::Pcx::PersonaPhotos::PhotoCacheFileHandler::WstrGetPhotoCacheDir'::`2'::`dynamic atexit destructor for 's_wstrPhotoCacheDirFullpath''+0x77068
+00000057`8493e3f0 00007ff9`2ec499bf     : 0000023c`2dfa3f00 00000057`8493e659 0000023c`2dfa3f00 00000057`8493e788 : mso98win32client!OfficeSpace::ShowContextualUIFromResource+0x882
+00000057`8493e5d0 00007ff6`6689c5e6     : 0000023c`23609128 0000023c`7ebf4aa0 0000023c`2dfa3f00 00000000`00000000 : mso98win32client!OfficeSpace::ShowContextualUIFromResource+0x17f
+00000057`8493e690 00007ff6`6689c2e6     : 00000000`00110b14 00000000`00000000 00000000`00000000 0000023c`35e1ea60 : OUTLOOK!MenuManager::ShowContextualUIEx+0x2e6
+00000057`8493ee00 00007ff6`6707671d     : 00000000`00004ea3 00000057`8493ef11 0000023c`7b6e0158 00000000`00000000 : OUTLOOK!MenuManager::ShowContextualUI+0x76
+00000057`8493ee60 00007ff6`673f3858     : 00000171`00000005 00000171`0000009e 0000023c`00000000 00000000`00000000 : OUTLOOK!ExecuteViewPopupMenu+0x17a
+00000057`8493ef60 00007ff6`6694c6a0     : 00000171`0000009e 00000171`0000009e 00000057`00000002 0000023c`7b4f9678 : OUTLOOK!StdTableView::ExecuteItemContextMenu+0x338
+00000057`8493f000 00007ff6`6740350e     : 00000035`0000001b 00000057`8493f190 00000035`0000001b 00000171`0000009e : OUTLOOK!CGridWnd::HandleClickOrDrag+0x421
+00000057`8493f110 00007ff6`673f1d72     : 00000171`0000009e 00000000`00000008 00000171`0000009e 00000035`0000001b : OUTLOOK!StdTableView::TryDragRow+0x12f
+00000057`8493f1c0 00007ff6`673e603a     : 00000000`00000007 00000000`00000000 00000057`8493f2d0 00000000`00000002 : OUTLOOK!StdTableView::DispatchMouseInput+0x20e
+00000057`8493f220 00007ff6`6694e2a0     : 00000171`0000009e 00000000`00000007 00000000`00000007 00000000`00000002 : OUTLOOK!StdTableView::OnCellRButtonDown+0x2a
+00000057`8493f260 00007ff6`673fef79     : 00000171`0000009e 0000023c`7b9b3260 00000171`0000009e 00000000`00000000 : OUTLOOK!CGridWnd::OnRButtonDown+0x1c0
+00000057`8493f310 00007ff6`65c84e78     : 0000023c`00000007 00007ff6`673feda0 00000000`00000002 00007ff6`679863c0 : OUTLOOK!StdTableView::OnRButtonDown+0x1d9
+00000057`8493f370 00007ff6`65c847c5     : 00000000`00000000 0000023c`7b9b3260 00000000`00000002 00000000`00b5aca5 : OUTLOOK!CWnd::WindowProc+0x518
+00000057`8493f430 00007ff6`65d03c3b     : 00000057`00000000 00000000`00000020 00000000`00000000 00000000`00000020 : OUTLOOK!StdTableView::WindowProc+0x105
+00000057`8493f4f0 00007ff6`65d035f4     : 00000000`00110b14 00000000`00000204 0000023c`7b9b3260 00000000`00000204 : OUTLOOK!AfxCallWndProc+0x14b
+00000057`8493f610 00007ff9`aae88271     : 00000000`00000000 00000000`00000012 00000000`00000001 00000000`00000204 : OUTLOOK!AfxWndProcSEHProtected+0xc4
+00000057`8493f660 00007ff9`aae87abb     : 00000000`00110b14 00007ff6`65d03520 00000000`00110b14 00000000`00000204 : user32!UserCallWinProcCheckWow+0x2d1
+00000057`8493f7c0 00007ff9`8ce36fc2     : 00000000`00000001 00000000`00110b14 00000057`8493fa14 00007ff9`aae87557 : user32!CallWindowProcW+0x8b
+00000057`8493f810 00007ff9`8ce36c89     : 00000000`00000001 00000000`00000204 00000000`00000000 0000023c`3643dd10 : comctl32!CallNextSubclassProc+0xb2
+00000057`8493f890 00007ff9`8ce36fc2     : 0000467a`00000001 00000000`00000000 00000000`00000000 00007ff6`65c85c16 : comctl32!TTSubclassProc+0xc9
+00000057`8493f940 00007ff9`8ce36da7     : 00000057`00000001 00000000`00000002 00000000`00110b14 00000000`0171009e : comctl32!CallNextSubclassProc+0xb2
+00000057`8493f9c0 00007ff9`aae88271     : 00000000`00000012 00000000`00000001 00000000`00000000 00000000`00000012 : comctl32!MasterSubclassProc+0xa7
+00000057`8493fa60 00007ff9`aae87d31     : 00000000`00000000 00007ff9`8ce36d00 00000000`00110b14 00000057`8493fcd0 : user32!UserCallWinProcCheckWow+0x2d1
+00000057`8493fbc0 00007ff6`65c79f05     : 00000057`8493fcd0 0000023c`00000000 0000023c`215c2ba0 00000000`00000000 : user32!DispatchMessageWorker+0x1f1
+00000057`8493fc40 00007ff6`65fa6cb5     : 00007ff6`67fe4b70 00000000`00000000 00000000`00000000 00007ff6`67fe4b70 : OUTLOOK!FMessageLoop+0x747
+00000057`8493fdf0 00007ff6`65c9dd53     : 00000000`00000000 00000000`00000001 00000000`00000000 000a0004`0101c201 : OUTLOOK!RenLibDLL::Run+0x15
+00000057`8493fe60 00007ff6`65fb3282     : 00000000`00000001 00000000`00000000 00000000`00000000 00000000`00000000 : OUTLOOK!WinMain+0xb3
+00000057`8493feb0 00007ff9`ab4426bd     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : OUTLOOK!_imp_load_VerQueryValueW+0x209
+00000057`8493fef0 00007ff9`aca0dfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+00000057`8493ff20 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
+
+
+STACK_COMMAND:  ~0s ; .cxr ; kb
+
+SYMBOL_NAME:  AdobePDFMakerX+21a37d
+
+MODULE_NAME: AdobePDFMakerX
+
+IMAGE_NAME:  AdobePDFMakerX.dll
+
+FAILURE_BUCKET_ID:  FAIL_FAST_STACK_BUFFER_OVERRUN_STACK_COOKIE_CHECK_FAILURE_MISSING_GSFRAME_c0000409_AdobePDFMakerX.dll!Unknown
+
+OS_VERSION:  10.0.22621.1
+
+BUILDLAB_STR:  ni_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  22.3.20310.0
+
+FAILURE_ID_HASH:  {1b4ca827-aa81-93db-354d-401d045fdbcd}
+
+Followup:     MachineOwner
+---------
+

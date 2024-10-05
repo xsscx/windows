@@ -1,0 +1,3 @@
+AADSpnSignInEventsBeta
+| summarize Count = count() by Application
+| order by Count desc

@@ -1,0 +1,14 @@
+let SpecificUser = "luzer@example.com";
+let SignInsByUser = AADSignInEventsBeta
+| where AccountUpn == SpecificUser
+| summarize CountByUser = count() by AccountUpn, ConditionalAccessStatus;
+let SignInsByLocation = AADSignInEventsBeta
+| where AccountUpn == SpecificUser
+| summarize CountByLocation = count() by Location = strcat(City, ", ", State, ", ", Country), ConditionalAccessStatus;
+let SignInsByPlatform = AADSignInEventsBeta
+| where AccountUpn == SpecificUser
+| summarize CountByPlatform = count() by OSPlatform, ConditionalAccessStatus;
+SignInsByUser
+| join kind=inner SignInsByLocation on ConditionalAccessStatus
+| join kind=inner SignInsByPlatform on ConditionalAccessStatus
+| project AccountUpn, ConditionalAccessStatus, CountByUser, Location, CountByLocation, OSPlatform, CountByPlatform;

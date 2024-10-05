@@ -1,0 +1,1 @@
+# INVALID_POINTER_READ_AVRF_c0000005_sechost.dll!LsaLookupUserAccountType

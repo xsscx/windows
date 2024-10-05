@@ -1,0 +1,172 @@
+
+Loading Dump File [C:\Windows\System32\config\systemprofile\AppData\Local\CrashDumps\CloudBerryDriveHost.exe.6124.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 17763 MP (16 procs) Free x64
+Product: LanManNt, suite: TerminalServer SingleUserTS
+Edition build lab: 17763.1.amd64fre.rs5_release.180914-1434
+Machine Name:
+Debug session time: Fri Nov 18 15:42:23.000 2022 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 0:58:28.000
+................................................................
+...................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(17ec.1b78): CLR exception - code e0434352 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ffc`eb271344 c3              ret
+0:101> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+*** WARNING: Unable to verify checksum for System.ni.dll
+*** WARNING: Unable to verify checksum for System.Runtime.Remoting.ni.dll
+DEBUG_FLR_EXCEPTION_CODE(80131509) and the ".exr -1" ExceptionCode(e0434352) don't match
+MethodDesc:   00007ffc7b4160e8
+Method Name:  Bh.I()
+Class:        00007ffc7b426318
+MethodTable:  00007ffc7b4161d0
+mdToken:      000000000600038e
+Module:       00007ffc7ae9b680
+IsJitted:     yes
+CodeAddr:     00007ffc7b577ee0
+Transparency: Critical
+MethodDesc:   00007ffc7b201ac8
+Method Name:  qu.A(System.EventArgs)
+Class:        00007ffc7b21b100
+MethodTable:  00007ffc7b201d78
+mdToken:      000000000600139b
+Module:       00007ffc7b0ae680
+IsJitted:     yes
+CodeAddr:     00007ffc7b577a70
+Transparency: Critical
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 175452
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 181344
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 2281
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 22100
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 281
+
+    Key  : CLR.BuiltBy
+    Value: NET48REL1LAST_C
+
+    Key  : CLR.Engine
+    Value: CLR
+
+    Key  : CLR.Version
+    Value: 4.8.4515.0
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 3508
+
+    Key  : WER.OS.Branch
+    Value: rs5_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2018-09-14T14:34:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.17763.1
+
+    Key  : WER.Process.Version
+    Value: 3.2.0.2
+
+
+FILE_IN_CAB:  CloudBerryDriveHost.exe.6124.dmp
+
+NTGLOBALFLAG:  0
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=00007ffcd76ed010 rbx=00000000e0434352 rcx=0000000000000002
+rdx=000000005645d258 rsi=0000000000000001 rdi=0000000000000005
+rip=00007ffce80d4859 rsp=000000005645e040 rbp=00000000019476b0
+ r8=00007ffcd76ed010  r9=000000005645d880 r10=000000005645d470
+r11=000000005645d7a4 r12=0000000000004000 r13=000000005645e710
+r14=000000005645e1d8 r15=000000000297bce0
+iopl=0         nv up ei pl nz na po nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
+KERNELBASE!RaiseException+0x69:
+00007ffc`e80d4859 0f1f440000      nop     dword ptr [rax+rax]
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ffce80d4859 (KERNELBASE!RaiseException+0x0000000000000069)
+   ExceptionCode: e0434352 (CLR exception)
+  ExceptionFlags: 00000001
+NumberParameters: 5
+   Parameter[0]: ffffffff80131509
+   Parameter[1]: 0000000000000000
+   Parameter[2]: 0000000000000000
+   Parameter[3]: 0000000000000000
+   Parameter[4]: 00007ffcda490000
+
+PROCESS_NAME:  CloudBerryDriveHost.exe
+
+EXCEPTION_CODE_STR:  80131509
+
+FAULTING_THREAD:  ffffffff
+
+STACK_TEXT:  
+00000000`5645e3f0 00007ffc`7b577f70 UNKNOWN!Bh.I+0x90
+00000000`5645e430 00007ffc`7b577c21 UNKNOWN!bu.a+0x161
+00000000`5645e480 00007ffc`7b577a9e UNKNOWN!qu.A+0x2e
+00000000`5645e4b0 00007ffc`7b57796d UNKNOWN!qu.G+0x2d
+00000000`5645e4e0 00007ffc`d812df12 mscorlib_ni!System.Threading.ExecutionContext.RunInternal+0x172
+00000000`5645e5b0 00007ffc`d812dd95 mscorlib_ni!System.Threading.ExecutionContext.Run+0x15
+00000000`5645e5e0 00007ffc`d812dd65 mscorlib_ni!System.Threading.ExecutionContext.Run+0x55
+00000000`5645e630 00007ffc`d8ad5ce0 mscorlib_ni!System.Threading.ThreadHelper.ThreadStart+0x60
+
+
+STACK_COMMAND:  ** Pseudo Context ** ManagedPseudo ** Value: ffffffff ** ; kb
+
+SYMBOL_NAME:  UNKNOWN!Bh.I+90
+
+MODULE_NAME: UNKNOWN!
+
+IMAGE_NAME:  Unknown_Image
+
+FAILURE_BUCKET_ID:  CLR_EXCEPTION_80131509_UNKNOWN!!Bh.I
+
+OS_VERSION:  10.0.17763.1
+
+BUILDLAB_STR:  rs5_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+FAILURE_ID_HASH:  {20a7f23f-7275-3093-d324-f0f947784644}
+
+Followup:     MachineOwner
+---------
+
+0:101> !avrf
+Application verifier is not enabled for this process.
+Use appverif.exe tool to enable it.

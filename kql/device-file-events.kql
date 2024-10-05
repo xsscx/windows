@@ -1,0 +1,4 @@
+DeviceFileEvents
+| where Timestamp > ago(30d)
+| summarize count() by ActionType, DeviceName
+| render  columnchart 
