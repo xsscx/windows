@@ -1,0 +1,241 @@
+This Crash may cross a security boundary, but based on the Docs this is the expected behavior.
+
+
+
+Microsoft (R) Windows Debugger Version 10.0.25200.1003 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\Windows\System32\config\systemprofile\AppData\Local\CrashDumps\LogonUI.exe.22124.dmp]
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 22621 MP (32 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 22621.1.amd64fre.ni_release.220506-1250
+Machine Name:
+Debug session time: Mon Nov 28 20:40:56.000 2022 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 0:22:15.000
+................................................................
+................................................................
+..........................................
+Loading unloaded module list
+........
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(566c.5a6c): Access violation - code c0000005 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007fff`b31cf954 c3              ret
+0:013> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : AV.Fault
+    Value: Read
+
+    Key  : Analysis.CPU.mSec
+    Value: 874
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 1264
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 0
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 233
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 2595
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 141
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 1335
+
+    Key  : WER.OS.Branch
+    Value: ni_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2022-05-06T12:50:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22621.1
+
+    Key  : WER.Process.Version
+    Value: 10.0.22621.1
+
+
+FILE_IN_CAB:  LogonUI.exe.22124.dmp
+
+NTGLOBALFLAG:  2000000
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+APPLICATION_VERIFIER_LOADED: 1
+
+CONTEXT:  (.ecxr)
+rax=0000000000000000 rbx=000000715e07e9f8 rcx=00007fffb26f5fd6
+rdx=00007fffb11d423c rsi=00007fffb11c3e78 rdi=000000715e07e9d0
+rip=00007fffb26f5fd6 rsp=000000715e07e7f0 rbp=0000000000000000
+ r8=0000019e5a61cfe1  r9=00007fffb26b0000 r10=000000715e07e870
+r11=00007fffb26f48d0 r12=0000000000000800 r13=00007fffb11c4058
+r14=0000019e5a61cfe0 r15=000000715e07efb8
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00010202
+rpcrt4!EvaluateExpr+0xb6:
+00007fff`b26f5fd6 410fb600        movzx   eax,byte ptr [r8] ds:0000019e`5a61cfe1=??
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007fffb26f5fd6 (rpcrt4!EvaluateExpr+0x00000000000000b6)
+   ExceptionCode: c0000005 (Access violation)
+  ExceptionFlags: 00000000
+NumberParameters: 2
+   Parameter[0]: 0000000000000000
+   Parameter[1]: 0000019e5a61cfe1
+Attempt to read from address 0000019e5a61cfe1
+
+PROCESS_NAME:  LogonUI.exe
+
+READ_ADDRESS:  0000019e5a61cfe1 
+
+ERROR_CODE: (NTSTATUS) 0xc0000005 - The instruction at 0x%p referenced memory at 0x%p. The memory could not be %s.
+
+EXCEPTION_CODE_STR:  c0000005
+
+EXCEPTION_PARAMETER1:  0000000000000000
+
+EXCEPTION_PARAMETER2:  0000019e5a61cfe1
+
+STACK_TEXT:  
+00000071`5e07e7f0 00007fff`b26fd14f     : 00007fff`b11bebc0 00000000`00000000 0000019e`652d4df0 00000071`5e07eb60 : rpcrt4!EvaluateExpr+0xb6
+00000071`5e07e820 00007fff`b26f1d1e     : 00007fff`00000000 00000071`5e07e9d0 00000000`00000000 00000000`00000000 : rpcrt4!Ndr64ConformantStructBufferSize+0x8f
+00000071`5e07e870 00007fff`b2784748     : 00000000`00000001 00007fff`b11befc0 00000000`00000001 00000071`5e07ec40 : rpcrt4!Ndr64TopLevelPointerBufferSize+0xae
+00000071`5e07e8a0 00007fff`b2781877     : 00000071`5e07ec40 00000000`00000006 00007fff`b11be000 00000000`00000006 : rpcrt4!Ndr64pSizing+0x158
+00000071`5e07e8f0 00007fff`b278104b     : 00007fff`b11bed00 00000000`00000006 00000000`00000000 00007fff`b11be000 : rpcrt4!NdrpClientCall3+0x357
+00000071`5e07ec10 00007fff`b116601f     : 00007fff`8abf2050 00000000`00000000 00000000`00000000 00000000`00000000 : rpcrt4!NdrClientCall3+0xeb
+00000071`5e07efa0 00007fff`8ab6707e     : 0000019e`5a61cfe0 00000071`5e07f114 00007fff`8abf2050 00000000`00000004 : sechost!LsaLookupUserAccountType+0x4f
+00000071`5e07f050 00007fff`8ab6e967     : 00000071`5e07f590 00000000`00000000 00000000`00000000 0000019e`5b9e4c80 : FaceCredentialProvider+0x707e
+00000071`5e07f3a0 00007fff`abd2961e     : 0000019e`48862fa0 00000002`00000000 00000000`00000001 00007fff`b1d8cadc : FaceCredentialProvider!DllGetClassObject+0x48c7
+00000071`5e07f3d0 00007fff`abd25f54     : 00000000`00000000 00000000`00000000 0000019e`490f3fd0 00007fff`abd15885 : credprovhost!CProviderData::`vector deleting destructor'+0x5e
+00000071`5e07f400 00007fff`abd1175a     : 0000019e`48dcff90 00007fff`abd6060c 0000019e`48dcff90 00007fff`abd286f1 : credprovhost!Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,1,0,0,Microsoft::WRL::FtmBase>::Release+0x54
+00000071`5e07f430 00007fff`abd11926     : 0000019e`48dbdec0 00007fff`abd6060c 00000000`00000001 00000000`00000000 : credprovhost!CTSimpleArray<Microsoft::WRL::ComPtr<CProviderData>,4294967294,CTPolicyCoTaskMem<Microsoft::WRL::ComPtr<CProviderData> >,CSimpleArrayStandardCompareHelper<Microsoft::WRL::ComPtr<CProviderData> >,CSimpleArrayStandardMergeHelper<Microsoft::WRL::ComPtr<CProviderData> > >::RemoveAll+0x5a
+00000071`5e07f460 00007fff`abd11f0c     : 0000019e`48dbdec0 00000071`5e07f590 00007fff`abd6060c 00000000`00000000 : credprovhost!CCredentialProviderThread::_ReleaseCredentialProviders+0x12
+00000071`5e07f490 00007fff`abd146a3     : 0000019e`48dbdec0 0000019e`48dbdec0 00000000`00000000 00000000`00000000 : credprovhost!CCredentialProviderThread::_vThreadProc+0x3cc
+00000071`5e07f6d0 00007fff`b108244d     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : credprovhost!CCredentialProviderThread::_sThreadProc+0xb3
+00000071`5e07f7a0 00007fff`b318dfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+00000071`5e07f7d0 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
+
+
+SYMBOL_NAME:  sechost!LsaLookupUserAccountType+4f
+
+MODULE_NAME: sechost
+
+IMAGE_NAME:  sechost.dll
+
+STACK_COMMAND:  ~13s; .ecxr ; kb
+
+FAILURE_BUCKET_ID:  INVALID_POINTER_READ_AVRF_c0000005_sechost.dll!LsaLookupUserAccountType
+
+OS_VERSION:  10.0.22621.1
+
+BUILDLAB_STR:  ni_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  10.0.22621.608
+
+FAILURE_ID_HASH:  {66bbef53-6da5-7a4c-1982-7746fccdb7d0}
+
+Followup:     MachineOwner
+---------
+
+0:013> k
+ # Child-SP          RetAddr               Call Site
+00 00000071`5e07cc28 00007fff`b06e57c9     ntdll!NtWaitForMultipleObjects+0x14
+01 00000071`5e07cc30 00007fff`b06e56ce     KERNELBASE!WaitForMultipleObjectsEx+0xe9
+02 00000071`5e07cf10 00007fff`b10e1f43     KERNELBASE!WaitForMultipleObjects+0xe
+03 00000071`5e07cf50 00007fff`b10e1982     kernel32!WerpReportFaultInternal+0x587
+04 00000071`5e07d070 00007fff`b07d6d0b     kernel32!WerpReportFault+0xbe
+05 00000071`5e07d0b0 00007fff`b31d861d     KERNELBASE!UnhandledExceptionFilter+0x3db
+06 00000071`5e07d1d0 00007fff`b31bf087     ntdll!RtlUserThreadStart$filt$0+0xac
+07 00000071`5e07d210 00007fff`b31d3eaf     ntdll!_C_specific_handler+0x97
+08 00000071`5e07d280 00007fff`b314eae6     ntdll!RtlpExecuteHandlerForException+0xf
+09 00000071`5e07d2b0 00007fff`b31d2e9e     ntdll!RtlDispatchException+0x286
+0a 00000071`5e07da00 00007fff`b26f5fd6     ntdll!KiUserExceptionDispatch+0x2e
+0b 00000071`5e07e7f0 00007fff`b26fd14f     rpcrt4!EvaluateExpr+0xb6
+0c 00000071`5e07e820 00007fff`b26f1d1e     rpcrt4!Ndr64ConformantStructBufferSize+0x8f
+0d 00000071`5e07e870 00007fff`b2784748     rpcrt4!Ndr64TopLevelPointerBufferSize+0xae
+0e 00000071`5e07e8a0 00007fff`b2781877     rpcrt4!Ndr64pSizing+0x158
+0f 00000071`5e07e8f0 00007fff`b278104b     rpcrt4!NdrpClientCall3+0x357
+10 00000071`5e07ec10 00007fff`b116601f     rpcrt4!NdrClientCall3+0xeb
+11 00000071`5e07efa0 00007fff`8ab6707e     sechost!LsaLookupUserAccountType+0x4f
+12 00000071`5e07f050 00007fff`8ab6e967     FaceCredentialProvider+0x707e
+13 00000071`5e07f3a0 00007fff`abd2961e     FaceCredentialProvider!DllGetClassObject+0x48c7
+14 00000071`5e07f3d0 00007fff`abd25f54     credprovhost!CProviderData::`vector deleting destructor'+0x5e
+15 00000071`5e07f400 00007fff`abd1175a     credprovhost!Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,1,0,0,Microsoft::WRL::FtmBase>::Release+0x54
+16 00000071`5e07f430 00007fff`abd11926     credprovhost!CTSimpleArray<Microsoft::WRL::ComPtr<CProviderData>,4294967294,CTPolicyCoTaskMem<Microsoft::WRL::ComPtr<CProviderData> >,CSimpleArrayStandardCompareHelper<Microsoft::WRL::ComPtr<CProviderData> >,CSimpleArrayStandardMergeHelper<Microsoft::WRL::ComPtr<CProviderData> > >::RemoveAll+0x5a
+17 00000071`5e07f460 00007fff`abd11f0c     credprovhost!CCredentialProviderThread::_ReleaseCredentialProviders+0x12
+18 00000071`5e07f490 00007fff`abd146a3     credprovhost!CCredentialProviderThread::_vThreadProc+0x3cc
+19 00000071`5e07f6d0 00007fff`b108244d     credprovhost!CCredentialProviderThread::_sThreadProc+0xb3
+1a 00000071`5e07f7a0 00007fff`b318dfb8     kernel32!BaseThreadInitThunk+0x1d
+1b 00000071`5e07f7d0 00000000`00000000     ntdll!RtlUserThreadStart+0x28
+0:013> kb
+ # RetAddr               : Args to Child                                                           : Call Site
+00 00007fff`b06e57c9     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!NtWaitForMultipleObjects+0x14
+01 00007fff`b06e56ce     : 00000000`0000098c 00000000`00000096 00000000`d000022d 00000000`d000022d : KERNELBASE!WaitForMultipleObjectsEx+0xe9
+02 00007fff`b10e1f43     : 00000000`00000000 00000000`00000001 00000071`5e07d240 00000000`00000096 : KERNELBASE!WaitForMultipleObjects+0xe
+03 00007fff`b10e1982     : 00000000`00000000 00000000`00000000 00000000`00000003 00007fff`b1070000 : kernel32!WerpReportFaultInternal+0x587
+04 00007fff`b07d6d0b     : 00000000`00000000 00000071`5e07f7d0 00000000`00000001 00007fff`b323e726 : kernel32!WerpReportFault+0xbe
+05 00007fff`b31d861d     : 00000000`0005dfd9 00007fff`b3291b60 00000000`00000000 00007fff`b31511da : KERNELBASE!UnhandledExceptionFilter+0x3db
+06 00007fff`b31bf087     : 00000071`5e07d310 00000000`00000000 00000071`5e07d2c8 00000071`5e07d8b0 : ntdll!RtlUserThreadStart$filt$0+0xac
+07 00007fff`b31d3eaf     : 00000000`00000000 00000071`5e07d810 00000071`5e07def0 00000071`5e07def0 : ntdll!_C_specific_handler+0x97
+08 00007fff`b314eae6     : 00000071`5e07def0 00007fff`b3130000 00007fff`b318dfb8 00007fff`b32bce20 : ntdll!RtlpExecuteHandlerForException+0xf
+09 00007fff`b31d2e9e     : 00000000`00000000 00000071`5e07dc18 00000071`5e07e9f8 00000071`5e07dc38 : ntdll!RtlDispatchException+0x286
+0a 00007fff`b26f5fd6     : 00007fff`b279a7f8 0000019e`66aeecb0 00000000`00000000 00000000`00000000 : ntdll!KiUserExceptionDispatch+0x2e
+0b 00007fff`b26fd14f     : 00007fff`b11bebc0 00000000`00000000 0000019e`652d4df0 00000071`5e07eb60 : rpcrt4!EvaluateExpr+0xb6
+0c 00007fff`b26f1d1e     : 00007fff`00000000 00000071`5e07e9d0 00000000`00000000 00000000`00000000 : rpcrt4!Ndr64ConformantStructBufferSize+0x8f
+0d 00007fff`b2784748     : 00000000`00000001 00007fff`b11befc0 00000000`00000001 00000071`5e07ec40 : rpcrt4!Ndr64TopLevelPointerBufferSize+0xae
+0e 00007fff`b2781877     : 00000071`5e07ec40 00000000`00000006 00007fff`b11be000 00000000`00000006 : rpcrt4!Ndr64pSizing+0x158
+0f 00007fff`b278104b     : 00007fff`b11bed00 00000000`00000006 00000000`00000000 00007fff`b11be000 : rpcrt4!NdrpClientCall3+0x357
+10 00007fff`b116601f     : 00007fff`8abf2050 00000000`00000000 00000000`00000000 00000000`00000000 : rpcrt4!NdrClientCall3+0xeb
+11 00007fff`8ab6707e     : 0000019e`5a61cfe0 00000071`5e07f114 00007fff`8abf2050 00000000`00000004 : sechost!LsaLookupUserAccountType+0x4f
+12 00007fff`8ab6e967     : 00000071`5e07f590 00000000`00000000 00000000`00000000 0000019e`5b9e4c80 : FaceCredentialProvider+0x707e
+13 00007fff`abd2961e     : 0000019e`48862fa0 00000002`00000000 00000000`00000001 00007fff`b1d8cadc : FaceCredentialProvider!DllGetClassObject+0x48c7
+14 00007fff`abd25f54     : 00000000`00000000 00000000`00000000 0000019e`490f3fd0 00007fff`abd15885 : credprovhost!CProviderData::`vector deleting destructor'+0x5e
+15 00007fff`abd1175a     : 0000019e`48dcff90 00007fff`abd6060c 0000019e`48dcff90 00007fff`abd286f1 : credprovhost!Microsoft::WRL::Details::RuntimeClassImpl<Microsoft::WRL::RuntimeClassFlags<2>,1,0,0,Microsoft::WRL::FtmBase>::Release+0x54
+16 00007fff`abd11926     : 0000019e`48dbdec0 00007fff`abd6060c 00000000`00000001 00000000`00000000 : credprovhost!CTSimpleArray<Microsoft::WRL::ComPtr<CProviderData>,4294967294,CTPolicyCoTaskMem<Microsoft::WRL::ComPtr<CProviderData> >,CSimpleArrayStandardCompareHelper<Microsoft::WRL::ComPtr<CProviderData> >,CSimpleArrayStandardMergeHelper<Microsoft::WRL::ComPtr<CProviderData> > >::RemoveAll+0x5a
+17 00007fff`abd11f0c     : 0000019e`48dbdec0 00000071`5e07f590 00007fff`abd6060c 00000000`00000000 : credprovhost!CCredentialProviderThread::_ReleaseCredentialProviders+0x12
+18 00007fff`abd146a3     : 0000019e`48dbdec0 0000019e`48dbdec0 00000000`00000000 00000000`00000000 : credprovhost!CCredentialProviderThread::_vThreadProc+0x3cc
+19 00007fff`b108244d     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : credprovhost!CCredentialProviderThread::_sThreadProc+0xb3
+1a 00007fff`b318dfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+1b 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
+0:013> dl
+00007fff`b26f5fd6  08c28348`00b60f41 c328c483`48128949
+00007fff`b26f5fe6  48097502`e98341cc fffffbca`e928c483
