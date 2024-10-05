@@ -1,0 +1,3 @@
+union withsource=SourceTable EmailEvents, EmailAttachmentInfo, EmailPostDeliveryEvents
+| where ThreatTypes == "Phish"
+| sort by Timestamp desc

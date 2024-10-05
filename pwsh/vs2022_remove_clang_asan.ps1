@@ -1,0 +1,1 @@
+﻿ & "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe" modify --installPath "C:\Program Files\Microsoft Visual Studio\2022\Enterprise" --remove Microsoft.VisualStudio.Component.ClangCompiler --remove Microsoft.VisualStudio.ComponentGroup.Native.Clang

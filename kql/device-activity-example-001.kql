@@ -1,0 +1,4 @@
+let selectedTimestamp = datetime(now);
+search in (DeviceProcessEvents,DeviceNetworkEvents,DeviceFileEvents,DeviceRegistryEvents,DeviceLogonEvents,DeviceImageLoadEvents,DeviceEvents)
+Timestamp between ((selectedTimestamp - 1h) .. (selectedTimestamp + 1h))
+| take 100

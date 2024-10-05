@@ -1,0 +1,1 @@
+$jqPath = "$env:USERPROFILE\jq.exe"; Invoke-WebRequest -Uri "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-win64.exe" -OutFile $jqPath; [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";$env:USERPROFILE", "User")
