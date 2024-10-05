@@ -1,0 +1,142 @@
+Microsoft.Tri.Sensor.Deployment.Deployer.exe.13364.dmp
+User Mini Dump File: Only registers, stack and portions of memory are available
+
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 17763 MP (16 procs) Free x64
+Product: LanManNt, suite: TerminalServer SingleUserTS
+Edition build lab: 17763.1.amd64fre.rs5_release.180914-1434
+Machine Name:
+Debug session time: Thu Nov 17 17:18:08.000 2022 (UTC - 5:00)
+System Uptime: not available
+Process Uptime: 0 days 0:00:02.000
+..............................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(3434.4528): CLR exception - code e0434352 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ff8`6a321344 c3              ret
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+DEBUG_FLR_EXCEPTION_CODE(80070002) and the ".exr -1" ExceptionCode(e0434352) don't match
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 16843
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 18278
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 2062
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 13839
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 201
+
+    Key  : CLR.BuiltBy
+    Value: NET48REL1LAST_C
+
+    Key  : CLR.Engine
+    Value: CLR
+
+    Key  : CLR.Version
+    Value: 4.8.4515.0
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 2
+
+    Key  : WER.OS.Branch
+    Value: rs5_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2018-09-14T14:34:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.17763.1
+
+    Key  : WER.Process.Version
+    Value: 2.193.15824.20477
+
+
+FILE_IN_CAB:  Microsoft.Tri.Sensor.Deployment.Deployer.exe.13364.dmp
+
+NTGLOBALFLAG:  0
+
+PROCESS_BAM_CURRENT_THROTTLED: 0
+
+PROCESS_BAM_PREVIOUS_THROTTLED: 0
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000000000000000 rbx=000000ea50bfd350 rcx=0000000000000000
+rdx=0000000000000000 rsi=000000ea50bfa800 rdi=000000ea50bfb4e0
+rip=00007ff867224859 rsp=000000ea50bfa6c0 rbp=000000ea50bfad50
+ r8=0000000000000000  r9=0000000000000000 r10=0000000000000000
+r11=0000000000000000 r12=000000ea50bfbaf8 r13=00007ff8585b06e0
+r14=0000000000000000 r15=0000000000000000
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000202
+KERNELBASE!RaiseException+0x69:
+00007ff8`67224859 0f1f440000      nop     dword ptr [rax+rax]
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ff867224859 (KERNELBASE!RaiseException+0x0000000000000069)
+   ExceptionCode: e0434352 (CLR exception)
+  ExceptionFlags: 00000001
+NumberParameters: 5
+   Parameter[0]: ffffffff80070002
+   Parameter[1]: 0000000000000000
+   Parameter[2]: 0000000000000000
+   Parameter[3]: 0000000000000000
+   Parameter[4]: 00007ff8583d0000
+
+PROCESS_NAME:  Microsoft.Tri.Sensor.Deployment.Deployer.exe
+
+EXCEPTION_CODE_STR:  80070002
+
+FAULTING_THREAD:  ffffffff
+
+STACK_TEXT:  
+00000000`00000000 00000000`00000000 Microsoft_Tri_Sensor_Deployment_Deployer!unknown_function+0x0
+
+
+STACK_COMMAND:  dt ntdll!LdrpLastDllInitializer BaseDllName ; dt ntdll!LdrpFailureData ; ** Pseudo Context ** ManagedPseudo ** Value: ffffffff ** ; kb
+
+SYMBOL_NAME:  Microsoft_Tri_Sensor_Deployment_Deployer!unknown_function
+
+MODULE_NAME: Microsoft_Tri_Sensor_Deployment_Deployer
+
+IMAGE_NAME:  Microsoft.Tri.Sensor.Deployment.Deployer.exe
+
+FAILURE_BUCKET_ID:  CLR_EXCEPTION_80070002_Microsoft.Tri.Sensor.Deployment.Deployer.exe!unknown_function
+
+OS_VERSION:  10.0.17763.1
+
+BUILDLAB_STR:  rs5_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  2.193.15824.20477
+
+FAILURE_ID_HASH:  {0a59da2f-9c45-9c11-7eae-0a8944b3d52d}
+
+Followup:     MachineOwner
+---------
+

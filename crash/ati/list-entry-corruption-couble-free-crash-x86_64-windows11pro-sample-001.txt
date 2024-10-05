@@ -1,0 +1,235 @@
+
+Microsoft (R) Windows Debugger Version 10.0.25200.1003 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\temp\atisys-MEMORY.DMP]
+Kernel Bitmap Dump File: Kernel address space is available, User address space may not be available.
+
+Primary dump contents written successfully
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Kernel Version 22621 MP (32 procs) Free x64
+Product: WinNt, suite: TerminalServer SingleUserTS
+Edition build lab: 22621.4.amd64fre.ni_release_svc_oem.220531-1755
+Machine Name:
+Kernel base = 0xfffff801`28200000 PsLoadedModuleList = 0xfffff801`28e133e0
+Debug session time: Tue Nov 22 20:58:43.672 2022 (UTC - 4:00)
+System Uptime: 0 days 0:11:00.727
+Loading Kernel Symbols
+...............................................................
+................................................................
+................................................................
+........
+Loading User Symbols
+
+Loading unloaded module list
+.....................
+For analysis of this file, run !analyze -v
+nt!KeBugCheckEx:
+fffff801`2861ea70 48894c2408      mov     qword ptr [rsp+8],rcx ss:0018:ffffef8a`bfa3e470=0000000000000139
+12: kd> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Bugcheck Analysis                                    *
+*                                                                             *
+*******************************************************************************
+
+KERNEL_SECURITY_CHECK_FAILURE (139)
+A kernel component has corrupted a critical data structure.  The corruption
+could potentially allow a malicious user to gain control of this machine.
+Arguments:
+Arg1: 0000000000000003, A LIST_ENTRY has been corrupted (i.e. double remove).
+Arg2: ffffef8abfa3e790, Address of the trap frame for the exception that caused the BugCheck
+Arg3: ffffef8abfa3e6e8, Address of the exception record for the exception that caused the BugCheck
+Arg4: 0000000000000000, Reserved
+
+Debugging Details:
+------------------
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 2342
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 2511
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 0
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 296
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 3533
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 96
+
+    Key  : Bugcheck.Code.DumpHeader
+    Value: 0x139
+
+    Key  : Bugcheck.Code.KiBugCheckData
+    Value: 0x139
+
+    Key  : Bugcheck.Code.Register
+    Value: 0x139
+
+    Key  : Dump.Attributes.AsUlong
+    Value: 1800
+
+    Key  : Dump.Attributes.DiagDataWrittenToHeader
+    Value: 1
+
+    Key  : Dump.Attributes.ErrorCode
+    Value: 0
+
+    Key  : Dump.Attributes.LastLine
+    Value: Dump completed successfully.
+
+    Key  : Dump.Attributes.ProgressPercentage
+    Value: 100
+
+    Key  : FailFast.Name
+    Value: CORRUPT_LIST_ENTRY
+
+    Key  : FailFast.Type
+    Value: 3
+
+    Key  : WER.OS.Branch
+    Value: ni_release_svc_oem
+
+    Key  : WER.OS.Timestamp
+    Value: 2022-05-31T17:55:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22621.4
+
+
+FILE_IN_CAB:  atisys-MEMORY.DMP
+
+TAG_NOT_DEFINED_202b:  *** Unknown TAG in analysis list 202b
+
+
+DUMP_FILE_ATTRIBUTES: 0x1800
+
+BUGCHECK_CODE:  139
+
+BUGCHECK_P1: 3
+
+BUGCHECK_P2: ffffef8abfa3e790
+
+BUGCHECK_P3: ffffef8abfa3e6e8
+
+BUGCHECK_P4: 0
+
+TRAP_FRAME:  ffffef8abfa3e790 -- (.trap 0xffffef8abfa3e790)
+NOTE: The trap frame does not contain all registers.
+Some register values may be zeroed or incorrect.
+rax=ffff9f073f89c8e0 rbx=0000000000000000 rcx=0000000000000003
+rdx=0000000001000000 rsi=0000000000000000 rdi=0000000000000000
+rip=fffff8012848975c rsp=ffffef8abfa3e920 rbp=0000000000000000
+ r8=ffff8e01c0954360  r9=0000000000000012 r10=0000000000000000
+r11=ffff9f07576d5040 r12=0000000000000000 r13=0000000000000000
+r14=0000000000000000 r15=0000000000000000
+iopl=0         nv up ei pl nz na pe cy
+nt!KiExitDispatcher+0x39c:
+fffff801`2848975c cd29            int     29h
+Resetting default scope
+
+EXCEPTION_RECORD:  ffffef8abfa3e6e8 -- (.exr 0xffffef8abfa3e6e8)
+ExceptionAddress: fffff8012848975c (nt!KiExitDispatcher+0x000000000000039c)
+   ExceptionCode: c0000409 (Security check failure or stack buffer overrun)
+  ExceptionFlags: 00000001
+NumberParameters: 1
+   Parameter[0]: 0000000000000003
+Subcode: 0x3 FAST_FAIL_CORRUPT_LIST_ENTRY 
+
+BLACKBOXBSD: 1 (!blackboxbsd)
+
+
+BLACKBOXNTFS: 1 (!blackboxntfs)
+
+
+BLACKBOXPNP: 1 (!blackboxpnp)
+
+
+BLACKBOXWINLOGON: 1
+
+PROCESS_NAME:  System
+
+ERROR_CODE: (NTSTATUS) 0xc0000409 - The system detected an overrun of a stack-based buffer in this application. This overrun could potentially allow a malicious user to gain control of this application.
+
+EXCEPTION_CODE_STR:  c0000409
+
+EXCEPTION_PARAMETER1:  0000000000000003
+
+EXCEPTION_STR:  0xc0000409
+
+STACK_TEXT:  
+ffffef8a`bfa3e468 fffff801`28631aa9     : 00000000`00000139 00000000`00000003 ffffef8a`bfa3e790 ffffef8a`bfa3e6e8 : nt!KeBugCheckEx
+ffffef8a`bfa3e470 fffff801`28631ef2     : ffff8e01`c0951180 0000000a`00000000 00000000`0000000a ffffef8a`bfa3e998 : nt!KiBugCheckDispatch+0x69
+ffffef8a`bfa3e5b0 fffff801`2863017a     : ffff8e01`c11c9180 ffff9f07`1517e740 ffff9f07`576d5040 ffff9f07`576d5040 : nt!KiFastFailDispatch+0xb2
+ffffef8a`bfa3e790 fffff801`2848975c     : ffff9f07`00000004 00000000`00000000 00000000`00000000 ffff8e01`c0951180 : nt!KiRaiseSecurityCheckFailure+0x33a
+ffffef8a`bfa3e920 fffff801`28488edb     : ffff9f07`158d8f00 ffff9f07`00000000 00000000`00000000 ffff9f07`15131d50 : nt!KiExitDispatcher+0x39c
+ffffef8a`bfa3ecc0 fffff801`29b46013     : ffff9f07`00000001 ffff9f07`1e2aed50 ffff9f07`00000020 ffff9f07`4d7341c0 : nt!KeSetEvent+0xeb
+ffffef8a`bfa3ed50 fffff801`29b552a0     : 00000000`00000000 ffff9f07`4b8bea20 ffff9f07`1e2aed50 00000000`00000000 : amdkmpfd+0x6013
+ffffef8a`bfa3ed80 fffff801`28492605     : ffff9f07`4b8bea20 ffff9f07`17011190 00000000`42696350 ffff9f07`1e2aed50 : amdkmpfd+0x152a0
+ffffef8a`bfa3edb0 fffff801`29939e9c     : ffff9f07`00000000 ffff9f07`1e2aed50 ffff9f07`4b8bea20 00000002`00000001 : nt!IofCallDriver+0x55
+ffffef8a`bfa3edf0 fffff801`29921797     : ffff9f07`17011040 00000000`00000003 ffff9f07`4b8beb80 00000000`00000000 : pci!PciBus_Remove+0x65c
+ffffef8a`bfa3ee40 fffff801`28492605     : ffff9f07`17011040 00000000`00000000 ffffef8a`bfa3efa0 ffffef8a`bfa3ef04 : pci!PciDispatchPnpPower+0xb7
+ffffef8a`bfa3eeb0 fffff801`288f7724     : ffff9f07`17011040 00000000`00000000 ffffef8a`bfa3efa0 ffff9f07`4b8bea20 : nt!IofCallDriver+0x55
+ffffef8a`bfa3eef0 fffff801`28893890     : 00000000`00000002 ffff9f07`19e93d50 ffff9f07`15297460 ffff9f07`19e93d50 : nt!IopSynchronousCall+0xf8
+ffffef8a`bfa3ef60 fffff801`28408a98     : ffffc604`49f4ded0 ffff9f07`15297460 00000000`00000200 00000000`0000000a : nt!IopRemoveDevice+0x108
+ffffef8a`bfa3f010 fffff801`288947b2     : ffff9f07`19e93d50 ffff9f07`15297460 00000000`00000000 cb3a4008`00200001 : nt!PnpRemoveLockedDeviceNode+0x1a8
+ffffef8a`bfa3f070 fffff801`28894527     : ffff9f07`15297460 ffffef8a`bfa3f0f0 ffff9f07`19e93d50 00000000`00000000 : nt!PnpDeleteLockedDeviceNode+0x4e
+ffffef8a`bfa3f0b0 fffff801`28895148     : ffff9f07`19e93d50 00000000`00000002 ffff9f07`19e93d50 00000000`00000000 : nt!PnpDeleteLockedDeviceNodes+0xcf
+ffffef8a`bfa3f130 fffff801`28880e91     : ffffef8a`bfa3f270 ffff9f07`15297400 ffff9f07`57c69800 ffffc604`00000018 : nt!PnpProcessQueryRemoveAndEject+0x388
+ffffef8a`bfa3f210 fffff801`288f0bd0     : ffffc604`49f4ded0 ffffc604`54cce750 ffff9f07`150c5c00 00000000`00000000 : nt!PnpProcessTargetDeviceEvent+0x109
+ffffef8a`bfa3f240 fffff801`284cc235     : ffff9f07`150c5c90 ffff9f07`44b87040 ffff9f07`57c69860 ffff9f07`00000000 : nt!PnpDeviceEventWorker+0x2c0
+ffffef8a`bfa3f2c0 fffff801`284c3957     : ffff9f07`44b87040 ffff9f07`39a46d08 ffff9f07`44b87040 00000000`00000000 : nt!ExpWorkerThread+0x155
+ffffef8a`bfa3f4b0 fffff801`28622b94     : fffff801`23177180 ffff9f07`44b87040 fffff801`284c3900 00000000`00000246 : nt!PspSystemThreadStartup+0x57
+ffffef8a`bfa3f500 00000000`00000000     : ffffef8a`bfa40000 ffffef8a`bfa39000 00000000`00000000 00000000`00000000 : nt!KiStartSystemThread+0x34
+
+
+SYMBOL_NAME:  amdkmpfd+6013
+
+MODULE_NAME: amdkmpfd
+
+IMAGE_NAME:  amdkmpfd.sys
+
+STACK_COMMAND:  .cxr; .ecxr ; kb
+
+BUCKET_ID_FUNC_OFFSET:  6013
+
+FAILURE_BUCKET_ID:  0x139_3_CORRUPT_LIST_ENTRY_amdkmpfd!unknown_function
+
+OS_VERSION:  10.0.22621.4
+
+BUILDLAB_STR:  ni_release_svc_oem
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+FAILURE_ID_HASH:  {c79f2530-e552-6fdd-2212-5e0106b92000}
+
+Followup:     MachineOwner
+---------
+
