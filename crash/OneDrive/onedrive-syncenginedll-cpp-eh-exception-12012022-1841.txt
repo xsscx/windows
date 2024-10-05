@@ -1,0 +1,167 @@
+Microsoft (R) Windows Debugger Version 10.0.25200.1003 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [C:\dumps\OneDrive.exe.13780.dmp]
+User Mini Dump File with Full Memory: Only application data is available
+
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*
+Symbol search path is: srv*
+Executable search path is: 
+Windows 10 Version 22621 MP (32 procs) Free x64
+Product: WinNt, suite: SingleUserTS
+Edition build lab: 22621.1.amd64fre.ni_release.220506-1250
+Machine Name:
+Debug session time: Thu Dec  1 18:31:50.000 2022 (UTC - 5:00)
+System Uptime: 1 days 10:49:00.004
+Process Uptime: 1 days 10:47:38.000
+................................................................
+................................................................
+........................................
+Loading unloaded module list
+................................................................
+This dump file has an exception of interest stored in it.
+The stored exception information can be accessed via .ecxr.
+(35d4.37c0): C++ EH exception - code e06d7363 (first/second chance not available)
+For analysis of this file, run !analyze -v
+ntdll!NtWaitForMultipleObjects+0x14:
+00007ff9`cc4cf954 c3              ret
+0:458> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.mSec
+    Value: 811
+
+    Key  : Analysis.DebugAnalysisManager
+    Value: Create
+
+    Key  : Analysis.Elapsed.mSec
+    Value: 1197
+
+    Key  : Analysis.IO.Other.Mb
+    Value: 0
+
+    Key  : Analysis.IO.Read.Mb
+    Value: 4
+
+    Key  : Analysis.IO.Write.Mb
+    Value: 4
+
+    Key  : Analysis.Init.CPU.mSec
+    Value: 171
+
+    Key  : Analysis.Init.Elapsed.mSec
+    Value: 12940717
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 103
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 125340
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 125258
+
+    Key  : WER.OS.Branch
+    Value: ni_release
+
+    Key  : WER.OS.Timestamp
+    Value: 2022-05-06T12:50:00Z
+
+    Key  : WER.OS.Version
+    Value: 10.0.22621.1
+
+    Key  : WER.Process.Version
+    Value: 22.227.1030.1
+
+
+FILE_IN_CAB:  OneDrive.exe.13780.dmp
+
+NTGLOBALFLAG:  400
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+CONTEXT:  (.ecxr)
+rax=0000005c81dfed40 rbx=00007ff97e5a97f0 rcx=0000000000000008
+rdx=000081a86dc4d812 rsi=0000005c81dff6c0 rdi=0000000019930520
+rip=00007ff9c992039c rsp=0000005c81dff560 rbp=0000005c81dff740
+ r8=00007ff9ca125e56  r9=fffffff800000030 r10=0000005c81dfe850
+r11=0000005c81dfe900 r12=0000000000000000 r13=0000000000000000
+r14=000000000000ffff r15=000000000000022c
+iopl=0         nv up ei pl nz na po nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000206
+KERNELBASE!RaiseException+0x6c:
+00007ff9`c992039c 0f1f440000      nop     dword ptr [rax+rax]
+Resetting default scope
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ff9c992039c (KERNELBASE!RaiseException+0x000000000000006c)
+   ExceptionCode: e06d7363 (C++ EH exception)
+  ExceptionFlags: 00000081
+NumberParameters: 4
+   Parameter[0]: 0000000019930520
+   Parameter[1]: 0000005c81dff6c0
+   Parameter[2]: 00007ff97e5a97f0
+   Parameter[3]: 00007ff97db50000
+
+PROCESS_NAME:  OneDrive.exe
+
+ERROR_CODE: (NTSTATUS) 0xe06d7363 - <Unable to get error code text>
+
+EXCEPTION_CODE_STR:  e06d7363
+
+EXCEPTION_PARAMETER1:  0000000019930520
+
+EXCEPTION_PARAMETER2:  0000005c81dff6c0
+
+EXCEPTION_PARAMETER3:  00007ff97e5a97f0
+
+EXCEPTION_PARAMETER4: 7ff97db50000
+
+STACK_TEXT:  
+0000005c`81dff560 00007ff9`985166c0     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`000027ec : KERNELBASE!RaiseException+0x6c
+0000005c`81dff640 00007ff9`7db84f7f     : 00000177`09ebc660 00000000`a238135c 00000177`21d07470 0000005c`f4f56000 : VCRUNTIME140!_CxxThrowException+0x90
+0000005c`81dff6a0 00007ff9`7dbf9033     : 01d904b9`64601aa0 00000177`02e40c50 0000005c`81dff958 00000000`00000000 : SyncEngine!QoS::ScenarioQosUnmountAddedFolder::~ScenarioQosUnmountAddedFolder+0x147df
+0000005c`81dff6f0 00007ff9`cc47c0e3     : 00000177`21d07470 00000177`21d07470 0000005c`f4f56000 00000000`0000ffff : SyncEngine!CreateDirectoryListing+0x23473
+0000005c`81dff770 00007ff9`cc47eaa3     : 00000177`2993f480 00000000`7ffe0386 00000177`2993f548 00000177`30d73ad0 : ntdll!RtlpTpTimerCallback+0x83
+0000005c`81dff7b0 00007ff9`cc466056     : 00000177`02e40c50 00000177`30d73ab0 00000000`00000000 00000177`02e40c50 : ntdll!TppTimerpExecuteCallback+0xb3
+0000005c`81dff800 00007ff9`cb36244d     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!TppWorkerThread+0x8f6
+0000005c`81dffae0 00007ff9`cc48dfb8     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : kernel32!BaseThreadInitThunk+0x1d
+0000005c`81dffb10 00000000`00000000     : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x28
+
+
+SYMBOL_NAME:  syncengine+147df
+
+MODULE_NAME: SyncEngine
+
+IMAGE_NAME:  SyncEngine.DLL
+
+STACK_COMMAND:  ~458s; .ecxr ; kb
+
+FAILURE_BUCKET_ID:  CPP_EXCEPTION_e06d7363_SyncEngine.DLL!Unknown
+
+OS_VERSION:  10.0.22621.1
+
+BUILDLAB_STR:  ni_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+IMAGE_VERSION:  22.227.1030.1
+
+FAILURE_ID_HASH:  {7a021f30-f792-362b-8f96-01e6ffba2ccc}
+
+Followup:     MachineOwner
+---------
+

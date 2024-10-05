@@ -1,0 +1,2 @@
+﻿Get-ChildItem -Recurse -File | Where-Object { $_.Extension -match '(\.vcxproj|\.sln|\.vcproj|\.filters|\.props|\.json|\.config|\.yml|\.cmake)' } | ForEach-Object { Write-Host "Found: $($_.FullName)" }
+Get-ChildItem -Recurse -File | Where-Object { $_.Extension -match '(\.vcxproj|\.sln|\.vcproj|\.filters|\.props|\.json|\.config|\.yml|\.cmake)' } | ForEach-Object { Write-Host "Found: $($_.FullName)" } > project_files_list.txt
