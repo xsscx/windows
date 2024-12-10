@@ -297,7 +297,7 @@ Get-NetTCPConnection | Select-Object -Property LocalAddress, LocalPort, RemoteAd
 netstat -an | Select-String LISTENING
 
 # 20. Query Installed Packages Using Chocolatey (if Installed)
-choco list
+# choco list
 
 
 
