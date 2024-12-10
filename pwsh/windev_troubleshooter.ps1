@@ -11,7 +11,7 @@
 ###########################################################
 
 Write-Host "== Starting Windows Development Troubleshooter ==" -ForegroundColor Green
-Write-Output "Copyright (c) 2024 David H Hoyt LLC. All rights reserved.: $(Format-Hyperlink -Uri "https://srd.cx" -Label "David H Hoyt LLC")"
+Write-Host "Copyright (c) 2024 David H Hoyt LLC. All rights reserved." -ForegroundColor White
 
 
 function Format-Hyperlink {
@@ -416,4 +416,4 @@ Get-VSInfo
 LogBanner -Title "End of Troubleshooting Report"
 Log "Troubleshooting completed successfully."
 
-Write-Host "============================= Exiting David H Hoyt LLC Windows Development Troubleshooter =============================" -ForegroundColor Green
+Write-Host "============================= Exiting Windows Development Troubleshooter =============================" -ForegroundColor White
