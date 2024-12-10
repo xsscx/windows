@@ -64,8 +64,6 @@ function Format-Hyperlink {
   return "$Uri"
 }
 
-Write-Output "Contributor: $(Format-Hyperlink -Uri "https://srd.cx" -Label "David H Hoyt LLC")"
-
 # Collect system information using a combination of CIM commands
 
 # Get serial numbers from BIOS using CIM
