@@ -255,25 +255,25 @@ Write-Host $output
 &"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -all -format json | ConvertFrom-Json | Format-Table -Property instanceId, installationName, installationPath, installationVersion -AutoSize
 
 # 6. List Installed CMake Versions
-Get-Command cmake | Select-Object -ExpandProperty Source | ForEach-Object { "$_" }
+# Get-Command cmake | Select-Object -ExpandProperty Source | ForEach-Object { "$_" }
 
 # 7. Query vcpkg Installation Path
 Get-Command vcpkg | Select-Object -ExpandProperty Source | Split-Path
 
 # 8. Find Installed Python Versions (Assuming python and python3 in PATH)
-&python --version; &python3 --version
+# &python --version; &python3 --version
 
 # 9. Check Node.js and npm Versions
-node --version; npm --version
+# node --version; npm --version
 
 # 10. Check Git Version and Configuration
 git --version; git config --list
 
 # 11. Query All Installed .NET SDK Versions
-dotnet --list-sdks
+# dotnet --list-sdks
 
 # 12. Query All Installed .NET Runtimes
-dotnet --list-runtimes
+# dotnet --list-runtimes
 
 # 13. Check Java Installation (Assuming java in PATH)
 # java -version
