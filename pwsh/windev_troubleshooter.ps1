@@ -296,7 +296,7 @@ netstat -an | Select-String LISTENING
 # 20. Query Installed Packages Using Chocolatey (if Installed)
 # choco list
 
-
+Get-ExecutionPolicy -List
 
 Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture
 Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer, Model
