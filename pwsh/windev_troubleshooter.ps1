@@ -2,7 +2,7 @@
 #
 ## Copyright (©) 2024 David H Hoyt. All rights reserved.
 ## 
-## Last Updated: 06-DEC-2024 by David Hoyt (©)
+## Last Updated: 23-FEB-2025 0811 EST by David Hoyt (©)
 #
 ## Intent: Poll the Device and Report for Troubleshooting
 #
@@ -11,7 +11,7 @@
 ###########################################################
 
 Write-Host "== Starting Windows Development Troubleshooter ==" -ForegroundColor Green
-Write-Host "Copyright (c) 2024 David H Hoyt LLC. All rights reserved." -ForegroundColor White
+Write-Host "Copyright (c) 2024-2025 David H Hoyt LLC. All rights reserved." -ForegroundColor White
 
 
 function Format-Hyperlink {
@@ -412,6 +412,7 @@ Get-SystemInfo
 Get-SoftwareInfo
 Get-EnvironmentInfo
 Get-VSInfo
+cl /Bv | FindStr "Version"
 
 LogBanner -Title "End of Troubleshooting Report"
 Log "Troubleshooting completed successfully."
