@@ -15,7 +15,7 @@
 #
 ###########################################################
 
-Write-Host "== StartingNeuter Telemetry ==" -ForegroundColor Green
+Write-Host "== Starting Neuter Telemetry ==" -ForegroundColor Green
 Write-Host "== Run from Developer Powershell ==" -ForegroundColor Cyan
 Write-Host "Copyright (c) 2024-2025 David H Hoyt LLC. All rights reserved." -ForegroundColor White
 
