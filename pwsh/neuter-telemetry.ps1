@@ -2,7 +2,7 @@
 #
 ## Copyright (©) 2024-2025 David H Hoyt. All rights reserved.
 #
-## Date: 26-FEB-2025 2126 EST by David Hoyt
+## Date: 26-FEB-2025 2127 EST by David Hoyt
 ## Intent: Neuter Telemetry
 #
 ## TODO: Refactor
@@ -15,8 +15,8 @@
 #
 ###########################################################
 
-Write-Host "== Starting Windows Development Troubleshooter ==" -ForegroundColor Green
-Write-Host "== Run from Project_Root/ ==" -ForegroundColor Cyan
+Write-Host "== StartingNeuter Telemetry ==" -ForegroundColor Green
+Write-Host "== Run from Developer Powershell ==" -ForegroundColor Cyan
 Write-Host "Copyright (c) 2024-2025 David H Hoyt LLC. All rights reserved." -ForegroundColor White
 
 # Disable .NET CLI Telemetry
