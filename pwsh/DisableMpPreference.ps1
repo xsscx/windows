@@ -12,6 +12,7 @@
 
 Write-Host "== Starting Windows DisableMpPreference.ps1 ==" -ForegroundColor Green
 Write-Host "Copyright (c) 2025 David H Hoyt LLC. All rights reserved." -ForegroundColor White
+if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) { Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
 Set-MpPreference -DisableRealtimeMonitoring $true
 Set-MpPreference -DisableBehaviorMonitoring $true
