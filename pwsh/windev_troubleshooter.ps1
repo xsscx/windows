@@ -438,33 +438,13 @@ cl /Bv | FindStr "Version"
 # 1. List all local branches
 git branch
 
-# 2. List all remote branches
-git branch -r
-
-# 3. Show the current branch
-git rev-parse --abbrev-ref HEAD
-
-# 4. Show the last commit details
-git log -1 --oneline
-
 # 5. Show the current repository status
 git status -s
 
 # 6. List all configured remotes and their URLs
 git remote -v
 
-# 7. Show the latest 5 commits in a concise format
-git log --oneline -n 5
-
-# 8. Show uncommitted changes
-git diff
-
-# 9. Show the last person to modify each line of a file (replace "file.txt")
-git blame
-
-# 10. Show the last 5 commits with their authors and dates
-git log -n 5 --pretty=format:"%h - %an, %ar : %s"
-
+cat CMakeCache.txt
 
 LogBanner -Title "End of Troubleshooting Report"
 Log "Troubleshooting completed successfully."
